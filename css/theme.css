@@ -543,7 +543,7 @@ div.sexy-gils {
     margin: 5px;
 }
 
-.main-sidebar .social-media .sm > i {
+.main-sidebar .social-media .sm > a > i {
     line-height: 87px;
     color:#fff;
 }
