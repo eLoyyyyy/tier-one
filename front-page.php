@@ -127,46 +127,35 @@
                     <?php endwhile; ?> 
             </div>
             <?php endif; ?>
-            <div class="row">
-                <?php 
-                $upload_dir = wp_upload_dir(); 
-                /*
-                $logo_dir = ( $upload_dir['basedir'] );
-                echo $logo_dir . '-----<br />';
-                $images = glob( $logo_dir . "/2016/*.*" );
-                print_r($images);
-                foreach( $images as $image ) {
-                    echo $image;
-                }*/
-                /*
-                function glob_recursive($pattern, $flags = 0) {
-                   $files = glob($pattern, $flags);
-                   foreach (glob(dirname($pattern).'/*', GLOB_ONLYDIR|GLOB_NOSORT) as $dir) {
-                      $files = array_merge($files, glob_recursive($dir.'/'.basename($pattern), $flags));
-                   }
-                   return $files;
-                }
-                var_dump(glob_recursive($upload_dir['basedir']));
-                */
-                $path = realpath($upload_dir['basedir']);
+            
+            <?php 
+            $upload_dir = wp_upload_dir(); 
 
-                $objects = new RecursiveIteratorIterator(
-                               new RecursiveDirectoryIterator($path), 
-                               RecursiveIteratorIterator::SELF_FIRST);
-                $file_display = array('jpg', 'jpeg', 'png', 'gif');
-                ?><div class="owl-carousel"><?php
-                foreach($objects as $name => $object){
-                    $file = explode('.', $object->getFilename());
-                    $file_type = strtolower(end($file));
-                    //$path = str_replace( $_SERVER["DOCUMENT_ROOT"] . 'wordpress', '', str_replace('\\', '/', $object->getPathname()) );
-                    $path = strstr( str_replace('\\', '/', $object->getPathname()), '/wp-content');
-                    if( in_array($file_type, $file_display) == true ) {
-                        ?><a class="sexy-gils-link" rel="group" href="<?php echo bloginfo('url') . $path; ?>"><div class="sexy-gils" style="background: url('<?php echo bloginfo('url') . $path; ?>');"></div></a><?php
+            $path = realpath($upload_dir['basedir']);
+
+            $objects = new RecursiveIteratorIterator(
+                           new RecursiveDirectoryIterator($path), 
+                           RecursiveIteratorIterator::SELF_FIRST);
+            $file_display = array('jpg', 'jpeg', 'png', 'gif');
+            if (!empty($objects)) :
+            ?>
+            
+            <div class="row">
+                <div class="owl-carousel">
+                <?php
+                    foreach($objects as $name => $object){
+                        $file = explode('.', $object->getFilename());
+                        $file_type = strtolower(end($file));
+                        //$path = str_replace( $_SERVER["DOCUMENT_ROOT"] . 'wordpress', '', str_replace('\\', '/', $object->getPathname()) );
+                        $path = strstr( str_replace('\\', '/', $object->getPathname()), '/wp-content');
+                        if( in_array($file_type, $file_display) == true ) {
+                            ?><a class="sexy-gils-link" rel="group" href="<?php echo bloginfo('url') . $path; ?>"><div class="sexy-gils" style="background: url('<?php echo bloginfo('url') . $path; ?>');"></div></a><?php
+                        }
                     }
-                }
-                ?></div><?php
                 ?>
+                </div>
             </div>
+            <?php endif ;?>
         </div>
         <div class="col-lg-3">
             <?php get_sidebar(); ?>
