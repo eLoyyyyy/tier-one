@@ -77,61 +77,59 @@ function tierone_theme_setup(){
 }
 add_action('init', 'tierone_theme_setup');
 
-require '/inc/custom-excerpt-length.php';
+if (!function_exists(tierone_setup)) :
+    
+    function tierone_setup(){
+        /*Theme Support function*/
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+        */
+        add_theme_support('title-tag');
 
-// automatically retrieve the first image from posts
-function get_first_image() {
-    global $post, $posts;
-    $first_img = '';
-    ob_start();
-    ob_end_clean();
-    $output = preg_match_all( '/<img .+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
-    $first_img = $matches[1][0];
-    if ( empty( $first_img ) ) {
-        // defines a fallback imaage
-        $first_img = get_template_directory_uri() . "/images/default.jpg";
+        // Setup the WordPress core custom background feature.
+        add_theme_support( 'custom-background' , apply_filters( 'tier_custom_background_cb', array(
+            'default-color' => 'ffffff',
+            'default-image' => '',
+        )));
+
+        add_theme_support('post-thumbnails');
+        add_theme_support('post-formats', array('aside','image','video'));
+        add_theme_support('html5',array('search-form'));
+        
+        /*Setup the Wordpress custom-logo*/
+        
     }
-    ?><div class="featured-image" style="background: url('<?php echo $first_img; ?>')"></div><?php
+
+endif;
+add_action('after_setup_theme','tierone_setup');
+
+
+/*add_theme_support('custom-logo', array(
+    'height' =>  100,
+    'width'       => 400,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+));*/
+
+/*header logo*/
+/*if ( ! function_exists( 'tier_the_custom_logo' ) ) :
+function tier_the_custom_logo() {
+    if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+    }
 }
+endif;*/
 
 
 
-
-if ( !function_exists( 'horizontal_ad_widget' ) ):
-    function horizontal_ad_widget() {
-
-        register_sidebar( array(
-            'name' => __( 'Horizontal Ad Widget', 'tierone' ),
-            'id' => 'horizontal-ad-1',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-            'description' => __( 'Horizontal Ad Widget On Body', 'tierone' ),
-        ) );
-
-    }
-    add_action( 'after_setup_theme', 'horizontal_ad_widget' );
-endif;
-
-require get_template_directory() . '/inc/recent-post-widget.php';
-require get_template_directory() . '/inc/tags-widget.php';
-
-if ( !function_exists( 'tierone_sidebar' ) ):
-    function tierone_sidebar() {
-
-        register_sidebar( array(
-            'name' => __( 'Main Sidebar', 'tierone' ),
-            'id' => 'main-sidebar',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
-            'description' => __( 'Main Sidebar for Front Page of Tier-One Theme', 'tierone' ),
-        ) );
-
-    }
-    add_action( 'after_setup_theme', 'tierone_sidebar' );
-endif;
-
-require get_template_directory() . '/inc/socialmedia-widget.php';
+/*requires functions*/
+require '/inc/custom-excerpt-length.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/widgets/recent-post-widget.php';
+require get_template_directory() . '/inc/widgets/tags-widget.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/widgets/socialmedia-widget.php';
