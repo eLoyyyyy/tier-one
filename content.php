@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 	<header class="genpost-entry-header">
 		<?php the_title( sprintf( '<h1 class="genpost-entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 	</header>
@@ -17,9 +17,9 @@
 		<?php } ?>
 	</div>
 	<div class="col-md-8 genpost-entry-content" itemprop="text">
-		 <h3 class="entry-meta" style="margin:0 0 10px;"><small><i class="fa fa-user"> </i> : <?php the_author(); ?> / <i class="fa fa-calendar"> </i> : <?php the_time('F j, Y '); ?> / <i class="fa fa-folder-o"></i> : <?php the_category(' ');?></small></h3> 
-
+		 <h3 class="entry-meta site-meta-t">
+		 	<small><i class="fa fa-user"> </i> : <?php the_author(); ?> / <i class="fa fa-calendar"> </i> : <?php the_time('F j, Y '); ?> / <i class="fa fa-folder-o"></i> : <?php the_category(' , ');?></small>
+		 </h3> 
 		<?php tierone_excerpt(45);?>
 	</div>
-	<span class="clearfix"></span>
 </article>

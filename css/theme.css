@@ -621,8 +621,11 @@ aside, nav {
   display: block;
   margin: auto;
 }
-.site-
 
+.site-meta-t{
+  font-size: 20px;
+  margin:0 0 10px;
+}
 
 .genpost-entry-meta,
 .single-entry-meta,
@@ -693,7 +696,7 @@ aside, nav {
 }
 
 .hentry {
-  margin: 0 0 4em;
+  margin: 0 0 0.3em;
 }
 
 .byline,
@@ -890,12 +893,12 @@ aside, nav {
   color: #fff;
 }
 
-.awaken-category-list,
-.awaken-tag-list {
+.tierone-category-list,
+.tierone-tag-list {
   display: inline;
 }
-.awaken-category-list a,
-.awaken-tag-list a {
+.tierone-category-list a,
+.tierone-tag-list a {
   padding: 4px 10px;
   background: #555;
   font-size: 12px;
@@ -904,8 +907,8 @@ aside, nav {
   line-height: 25px;
   color: #f5f5f5;
 }
-.awaken-category-list a:hover,
-.awaken-tag-list a:hover {
+.tierone-category-list a:hover,
+.tierone-tag-list a:hover {
   background: #fa5742;
   color: #fff;
 }

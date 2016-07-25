@@ -1,0 +1,30 @@
+/*iOS*/
+@media only screen and (min-width: 320px) and (max-width: 479px){
+	.site-pad-rl{
+		padding: 0 15px;
+	}
+	.site-pad-r{
+	  padding-right: 15px;
+	}
+	.site-pad-l{
+	  padding-left: 15px;
+	}
+}
+
+/*Andriod*/
+@media only screen and (min-width: 480px) and (max-width: 767px){ 
+	.site-pad-rl{
+		padding: 0 15px;
+	}
+	.site-pad-r{
+	  padding-right: 15px;
+	}
+	.site-pad-l{
+	  padding-left: 15px;
+	}
+}
+
+/*tablet*/
+@media only screen and (min-width: 768px) and (max-width: 991px){ ... }
+/*normal*/
+@media only screen and (min-width: 992px) and (max-width: 1999px){ ... }

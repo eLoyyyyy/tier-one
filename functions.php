@@ -57,6 +57,7 @@ function tierone_script_enqueue() {
     wp_enqueue_style('owl-carousel-theme');
     wp_register_style('fancybox', get_stylesheet_directory_uri() . '/css/jquery.fancybox.css', array(), '', 'all');
     wp_enqueue_style('fancybox');
+
     
     wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() . '/js/bootstrap.js', array('jquery'), '', false);
     wp_enqueue_script('jquery-vticker', get_stylesheet_directory_uri() . '/js/jquery.vticker.js', array('jquery'), '', false);
@@ -66,6 +67,7 @@ function tierone_script_enqueue() {
     
     wp_register_style('color-theme', get_stylesheet_directory_uri() . '/css/theme.css', array(), '', 'all');
     wp_enqueue_style('color-theme');
+    wp_enqueue_style('tierone-media', get_template_directory_uri() . '/css/tierone-media.css',array(), '1.0.0' );
     
 }
 add_action('wp_enqueue_scripts','tierone_script_enqueue');
