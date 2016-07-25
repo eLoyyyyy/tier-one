@@ -4,7 +4,7 @@
             <ul class="menu-left pull-left list-inline">
                 <li><a href=""><i class="fa fa-facebook" aria-hidden="false"></i></a></li>
                 <li><a href=""><i class="fa fa-twitter" aria-hidden="false"></i></a></li>
-                <li><a href=""><i class="fa fa-pinterest" aria-hidden="false"></i></a></li>
+                <li><a href=""><i class="fa fa-pinterest-p" aria-hidden="false"></i></a></li>
                 <li><a href=""><i class="fa fa-google-plus" aria-hidden="false"></i></a></li>
                 <li><a href=""><i class="fa fa-youtube" aria-hidden="false"></i></a></li>
                 <li><a href=""><i class="fa fa-linkedin" aria-hidden="false"></i></a></li>

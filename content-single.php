@@ -9,7 +9,7 @@
 	<?php } else { ?>
 		<figure class="genpost-featured-image">
 			<a href="<?php the_permalink(); ?>">
-				<img src="<?php echo get_template_directory_uri() . '/images/default.jpg'; ?>" />
+				<?php get_first_image(true); ?>
 			</a>
 		</figure>
 	<?php } ?>
