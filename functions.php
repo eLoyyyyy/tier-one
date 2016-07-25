@@ -97,6 +97,7 @@ if (!function_exists(tierone_setup)) :
 
         add_theme_support('post-thumbnails');
         add_theme_support('post-formats', array('aside','image','video'));
+        add_theme_support('featured' ,388, 220, true );
         add_theme_support('html5',array('search-form'));
         
         /*Setup the Wordpress custom-logo*/
