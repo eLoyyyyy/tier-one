@@ -77,7 +77,7 @@ function tierone_theme_setup(){
 }
 add_action('init', 'tierone_theme_setup');
 
-if (!function_exists(tierone_setup)) :
+if (!function_exists('tierone_setup')) :
     
     function tierone_setup(){
         /*Theme Support function*/
