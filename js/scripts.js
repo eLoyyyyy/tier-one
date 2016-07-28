@@ -17,4 +17,8 @@ jQuery(document).ready(function($){
         height:35
     });
     $('.carousel').carousel();
+
+    jQuery('.menu.navbar-right li a').click(function(){
+        jQuery('.tierone-search-box').stop(true,false).slideToggle();
+    });
 });

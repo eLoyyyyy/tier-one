@@ -1,6 +1,7 @@
 <nav>
     <div class="container">
-        <div class="footer clearfix">
+    <div class="row">
+        <div class="footer-socket clearfix">
             <ul class="menu-left pull-left list-inline">
                 <li><a href=""><i class="fa fa-facebook" aria-hidden="false"></i></a></li>
                 <li><a href=""><i class="fa fa-twitter" aria-hidden="false"></i></a></li>
@@ -18,6 +19,8 @@
             </ul>
         </div>
     </div>
+    </div>
+
 </nav>
 
 <footer>

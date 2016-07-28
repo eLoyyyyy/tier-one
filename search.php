@@ -5,6 +5,9 @@
 
 		<?php if ( have_posts() ) : ?>
 
+			<header class="search-page-header row">
+				<h1 class="search-page-title"><?php printf(__( '<span class="search-title-span">Search Results for : </span> %s', 'tierone' ), '<span>' . get_search_query() . '</span>'); ?></h1>
+			</header>
 			<?php /* Start the Loop */ 
 				$counter = 0;
 			?>
@@ -17,7 +20,7 @@
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content', 'search' );
 				?>
 			
 			<?php 
@@ -27,9 +30,8 @@
 			 	} 
 			?>
 			<?php endwhile; ?>
-			<?php tierone_paging_nav(); ?>
 		</div><!-- .row -->
-
+		<?php tierone_paging_nav(); ?>
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>

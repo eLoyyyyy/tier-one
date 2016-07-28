@@ -16,6 +16,10 @@
 					<?php if( get_previous_posts_link() ) : previous_posts_link( ' New Post »' ); endif; ?>
 				</li>
 			</ul>
+			<?php
+				get_template_part( 'content', 'related' ); //related post
+				comments_template( '', true ); // comments
+            ?>
 		</div>
 	</div>
     <div class="col-lg-3 site-pad-r">

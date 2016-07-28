@@ -68,27 +68,41 @@
             </div><!-- .header-image -->
         <?php endif; // End header image check. ?>
     </header>
-    <nav id="header-nav">
-        <div class="container">
-            <ul class='menu' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
-                <li class="active" itemprop='name'><a itemprop='url'><i class="fa fa-home" aria-hidden="true"></i></a></li>
-                <!-- <li ><a href='#'>Hello</a>
-                    <ul class='sub-menu'>
-                    <li itemprop='name'><a href='#' itemprop='url'>Test 1</a></li>
-                    <li itemprop='name'><a href='#' itemprop='url'>Test 2</a></li>
-                    <li itemprop='name'><a href='#' itemprop='url'>Test 3</a></li>
-                    </ul>
-                </li> -->
-                <li itemprop='name'><a itemprop='url'>Blog</a></li>
-                <li itemprop='name'><a itemprop='url'>Latest</a></li>
-                <li itemprop='name'><a itemprop='url'>Featured</a></li>
-                <li itemprop='name'><a itemprop='url'>Contact Us</a></li>
-            </ul>
-            <ul class='menu navbar-right' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
-                <li itemprop='name'><a itemprop='url'><i class="fa fa-search" aria-hidden="true"></i></a></li>
-            </ul>
+    <div class="container">
+        <div class="row">
+            <nav id="header-nav" class="navbar navbar-default navbar-static-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tierone_nav">
+                        <span class="sr-only"><?php _e('Navigation', 'tierone'); ?></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <a class="navbar-brand" title="<?php bloginfo('name');?>" href="<?php echo esc_html(home_url('/'));?>"><?php bloginfo('name');?></a> -->
+                </div>
+                <?php if (has_nav_menu("header-menu")): ?>
+                    <div id="tierone_nav" class="navbar-collapse collapse">
+                        <span class="tierone-home-icon">
+                            <a itemprop='url' title="<?php bloginfo('name');?>" href="<?php echo esc_html(home_url('/'));?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+                        </span>
+                        <?php tierone_display_main_menu(); ?>
+                        <ul class='menu navbar-right' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
+                            <li itemprop='name'><a itemprop='url'><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <div class="tierone-search-box">
+                            <div class="tierone-search-container">
+                                <form action="<?php echo esc_url(home_url('/'));?>" id="tierone-search-form" method="get">
+                                    <input type="text" name="search" placeholder="Search …">
+                                    <input type="submit" value="<?php _e( 'Search', 'tierone' ); ?>" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif;?>
+            </nav>
         </div>
-    </nav>
+    </div>
+
         
     <aside id="current">
         <div class="container site-pad-rl">

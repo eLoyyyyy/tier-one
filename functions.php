@@ -100,7 +100,7 @@ if (!function_exists('tierone_setup')) :
         add_theme_support('post-thumbnails');
         add_theme_support('post-formats', array('aside','image','video'));
         add_theme_support('featured' ,388, 220, true );
-        add_theme_support('html5',array('search-form'));
+        add_theme_support('html5',array('search-form','comment-form','comment-list','gallery','caption'));
         
         /*Setup the Wordpress custom-logo*/
         
@@ -126,6 +126,94 @@ function tier_the_custom_logo() {
     }
 }
 endif;*/
+
+/**
+* tierone main walker
+*/
+class tierone_menu_walker extends Walker_Nav_Menu
+{
+    
+    function start_el(&$output, $object, $depth = 0, $args = Array(), $current_object_id = 0) {
+
+        global $wp_query;
+        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+        $dropdown = $args->has_children && $depth == 0;
+
+        $class_names = $value = '';
+
+        // If the item has children, add the dropdown class for bootstrap
+        if ( $dropdown ) {
+            $class_names = "dropdown ";
+        }
+
+        $classes = empty( $object->classes ) ? array() : (array) $object->classes;
+
+        $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $object ) );
+        $class_names = ' class="'. esc_attr( $class_names ) . '"';
+
+        $output .= $indent . '<li id="menu-item-'. $object->ID . '"' . $value . $class_names .' itemprop="name">';
+
+        if ( $dropdown ) {
+            $attributes = ' href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"';
+        } else {
+            $attributes  = ! empty( $object->attr_title ) ? ' title="'  . esc_attr( $object->attr_title ) .'"' : '';
+            $attributes .= ! empty( $object->target )     ? ' target="' . esc_attr( $object->target     ) .'"' : '';
+            $attributes .= ! empty( $object->xfn )        ? ' rel="'    . esc_attr( $object->xfn        ) .'"' : '';
+            $attributes .= ! empty( $object->url )        ? ' href="'   . esc_attr( $object->url        ) .'"' : '';
+        }
+
+        $item_output = $args->before;
+        $item_output .= '<a'. $attributes .' itemprop="url">';
+        $item_output .= $args->link_before .apply_filters( 'the_title', $object->title, $object->ID );
+        $item_output .= $args->link_after;
+
+        // if the item has children add the caret just before closing the anchor tag
+        if ( $dropdown ) {
+            $item_output .= ' <b class="caret"></b>';
+        }
+        $item_output .= '</a>';
+
+        $item_output .= $args->after;
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $object, $depth, $args );
+    } // end start_el function
+    function start_lvl(&$output, $depth = 0, $args = Array()) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class='dropdown-menu' role='menu'>\n";
+    }
+    
+    function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ){
+        $id_field = $this->db_fields['id'];
+        if ( is_object( $args[0] ) ) {
+            $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
+        }
+        return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+}
+// Add Twitter Bootstrap's standard 'active' class name to the active nav link item
+function tierone_add_active_class($classes, $item) {
+    if( in_array('current-menu-item', $classes) ) {
+        $classes[] = "active";
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'tierone_add_active_class', 10, 2 );
+
+
+function tierone_display_main_menu() {
+    wp_nav_menu(
+        array( 
+            'theme_location' => 'header-menu', /* where in the theme it's assigned */
+            'menu' => 'main_nav', /* menu name */
+            'menu_class' => 'nav navbar-nav',
+            'container' => false, /* container class */
+            'items_wrap' => '<ul id="%1$s" class="%2$s" itemscope="" itemtype="http://schema.org/SiteNavigationElement">%3$s</ul>',
+            'depth' => 2,
+            'walker' => new tierone_menu_walker(),
+        )
+    );
+}
 
 
 

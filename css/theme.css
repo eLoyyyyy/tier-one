@@ -198,7 +198,7 @@ blockquote {
   background: #f8f8f8;
   margin: 1.5em 0;
   padding: 1.5em;
-  border-left: 2px solid #fa5742;
+  border-left: 2px solid #2e84ff;
 }
 
 address {
@@ -352,7 +352,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: none;
-  background: #fa5742;
+  background: #2e84ff;
   color: #fff;
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
@@ -454,6 +454,61 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+.navbar{
+  margin-bottom: 0;
+}
+.navbar-default{
+  background-color: #2e84ff;
+}
+
+.tierone-home-icon{
+  color: #fff;
+  float: left;
+  cursor: pointer;
+}
+.tierone-home-icon:hover{
+    background: #69a7ff;
+}
+.tierone-home-icon a{
+  padding: 10px 14px;
+  line-height: 50px;
+  color: #fff;
+}
+.tierone-home-icon a i{
+  font-size: 1.2em;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  border-color: #1c63ca;
+}
+.navbar-right{
+  margin-right: 0;
+}
+#header-nav .menu.navbar-right li a{
+  padding: 15px 10px;
+  line-height: 50px;
+}
+
+/*search*/
+.tierone-search-box{
+  display: none;
+}
+.tierone-search-container{
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 30%;
+  padding: 10px;
+  background: #f1f1f1;
+  box-shadow: 1px 2px 3px rgba(183, 183, 183, 0.68);
+}
+.tierone-search-container input[type="text"]{
+  width: 70%;
+  float: left;
+}
+.tierone-search-container form input[type="submit"]{
+  float: right;
+  padding: 10px 20px;
+}
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
@@ -491,13 +546,8 @@ aside, nav {
 }
 
 #header-nav ul li {
-    line-height: 50px;
     height: 50px;
     display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
     cursor: pointer;
 }
 #header-nav ul li a {
@@ -512,17 +562,82 @@ aside, nav {
 }
 
 #header-nav ul li.active:hover {
-    background: #69a7ff;
+    border-bottom: 6px solid #69a7ff;
 }
 
 #header-nav ul li.active {
-    margin-left: -15px;
+    border-bottom: 6px solid #69a7ff;
+    color: #fff;
 }
-
 #header-nav ul li a i{
     font-size:1.5em;
 }
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+  background-color: transparent;
+}
 
+.page-numbers{
+  padding: 0;
+  margin:  0;
+  list-style: none;
+}
+.page-numbers li{
+  display: inline-block;
+  font-size:14px;
+}
+.page-numbers .current{
+  background: #2e84ff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 1px;
+  font-weight: 600;
+}
+.page-numbers a{
+  color: #2e84ff;
+  padding: 5px 8px;
+}
+.page-numbers a:hover,
+.page-numbers a:focus{
+  background: #2e84ff;
+  color: #fff;
+  text-decoration: none;
+}
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  background-color: #f1f1f1;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
@@ -753,6 +868,7 @@ aside, nav {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
+  font-size: 14px;
 }
 .page-content a:hover,
 .entry-content a:hover,
@@ -768,26 +884,26 @@ aside, nav {
 .page-entry-title,
 .archive-page-title,
 .search-page-title {
-  background: #fa5742;
-  color: white;
-  display: inline-block;
-  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  font-family: "Helvetica", sans-serif;
   font-size: 16px;
-  font-size: 1.6rem;
   font-weight: 500;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 0 0.1em 0;
-  padding: 0 1.2em;
-  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 0;
   word-wrap: break-word;
+  background: #2e84ff;
+  display: inline-block;
+  padding: 0 0.2em;
+  text-transform: uppercase;
 }
 
 .page-entry-header,
 .archive-page-header,
 .search-page-header {
-  border-bottom: 2px solid #fa5742;
-  margin-bottom: 1.5em;
+  background-color: #2e84ff;
+  padding: 2px 7px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .page-entry-footer {
@@ -920,6 +1036,17 @@ aside, nav {
   color: #fa5742 !important;
 }
 
+/*related*/
+.article-title{
+  font-size: 14px;
+  margin: 10px 0 5px 0;
+}
+.meta{
+  font-size: 14px;
+  font-style: italic;
+  color:#777;
+}
+
 /*--------------------------------------------------------------
 10.3 Asides
 --------------------------------------------------------------*/
@@ -928,6 +1055,373 @@ aside, nav {
   display: none;
 }
 
+/*--------------------------------------------------------------
+10.4 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+.comments-area {
+  max-width: 747px;
+  margin: 40px 0;
+}
+
+.comments-title,
+.comment-list,
+.comment-reply-title,
+.must-log-in,
+.comment-respond .comment-form,
+.comment-respond iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.sidebar .comments-title,
+.sidebar .comment-list,
+.sidebar .must-log-in,
+.sidebar .comment-reply-title,
+.sidebar .comment-navigation,
+.sidebar .comment-respond .comment-form {
+  max-width: 1040px;
+  padding-left: 60px;
+  padding-right: 376px;
+}
+
+.comments-title {
+  margin: 20px 0;
+}
+
+.comment-list,
+.comment-list .children {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-list .children {
+  margin: 0 0 0 40px;
+}
+
+.comment-list > li:after,
+.comment-list .children > li:before {
+  background: url(images/dotted-line.png) repeat left top;
+  background-size: 4px 4px;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+.comment-list > li:last-child:after {
+  display: none;
+}
+
+.comment-body {
+  padding: 24px 0;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.comment-author .avatar {
+  display: block;
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+.comment-author .fn {
+  word-wrap: break-word;
+}
+
+.comment-author .fn,
+.comment-author .url,
+.comment-reply-link,
+.comment-reply-login {
+  color: #2e84ff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.says {
+  display: none;
+}
+
+.no-avatars .comment-author {
+  margin: 0 0 5px;
+  max-width: 100%;
+  position: relative;
+}
+
+.no-avatars .comment-metadata,
+.no-avatars .comment-content,
+.no-avatars .comment-list .reply {
+  width: 100%;
+}
+
+.comment-list .edit-link {
+  margin-left: 20px;
+}
+
+.comment-metadata,
+.comment-awaiting-moderation,
+.comment-content,
+.comment-list .reply {
+  margin: 10px 0;
+  font-size: 14px;
+  padding-left:50px;
+}
+
+.comment-meta,
+.comment-meta a,
+.comment-meta a time{
+  color: #a2a2a2;
+  font-size: 13px;
+}
+
+.comment-meta a:hover {
+  color: #555555;
+}
+
+.comment-metadata {
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.ping-meta {
+  color: #a2a2a2;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.comment-awaiting-moderation {
+  color: #a2a2a2;
+}
+
+.comment-awaiting-moderation:before {
+  content: "\f021";
+  margin-right: 10px;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-weight: normal;
+}
+
+.comment-reply-link:before,
+.comment-reply-login:before {
+  content: "\f122";
+  margin-right: 10px;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-weight: normal;
+}
+
+/* Comment form */
+.comment-respond {
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin: 30px 0;
+  max-width: 747px;
+}
+
+.comment .comment-respond {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.comment-reply-title small a {
+  color: #131310;
+  display: inline-block;
+  float: right;
+  height: 20px;
+  overflow: hidden;
+  width: 20px;
+}
+
+.comment-reply-title small a:hover {
+  color: #ed331c;
+  text-decoration: none;
+}
+
+.comment-reply-title small a:before {
+  content: "\f05c";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.sidebar .comment-list .comment-reply-title,
+.sidebar .comment-list .comment-respond .comment-form {
+  padding: 0;
+}
+
+.comment-form .comment-notes {
+  margin-bottom: 15px;
+}
+
+.comment-form [for="author"],
+.comment-form [for="email"],
+.comment-form [for="url"],
+.comment-form [for="comment"] {
+  float: left;
+  padding: 10px 0;
+  width: 100px;
+}
+
+.comment-form .required {
+  position: absolute;
+  color: red;
+  top: 10px;
+  right: 10px;
+}
+
+
+.comment-form textarea {
+  width: 100%;
+}
+
+.form-allowed-tags,
+.form-allowed-tags code {
+  color: #686758;
+  font-size: 14px;
+}
+
+.form-allowed-tags code {
+  font-size: 10px;
+  margin-left: 3px;
+  white-space: pre-wrap;
+}
+
+.comment-list .pingback,
+.comment-list .trackback {
+  padding-top: 24px;
+}
+
+.comment-navigation {
+  border-bottom: 1px solid #E7E7E7;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 747px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.no-comments {
+  background-color: #eeeeee;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.sidebar .no-comments {
+  padding-left: 60px;
+  padding-right: 376px;
+}
+
+.comment-reply-title {
+  margin-top: 0;
+}
+
+
+/*new additional comment style*/
+.form-group{
+  position: relative;
+  margin-bottom: 15px;
+}
+.form textarea{
+  min-height: 150px;
+}
+.form-control, form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="url"],
+form textarea,
+.widget_archive select,
+.widget_categories select{
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.form-group.medium .form-control,
+.form-group.medium input[type="text"],
+.form-group.medium input[type="password"],
+.form-group.medium input[type="email"],
+.form-group.medium input[type="url"],
+.form-group.medium textarea,
+.form-group.medium select{
+  width: 60%;
+}
+#respond input{
+  width: 100%;
+}
+.button,
+.form-submit input, 
+form input[type="submit"],
+form button[type="submit"]{
+display: inline-block;
+width: auto !important;
+font: 14px/110% Montserrat, Arial, sans-serif;
+background-color: #414141;
+color: #fff;
+padding: 15px 30px;
+margin-bottom: 0;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+background-image: none;
+border: 1px solid transparent;
+}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+
+/*--------------------------------------------------------------
+Style
+--------------------------------------------------------------*/
 
 div.marquee-title{
     background: transparent;
@@ -1455,7 +1949,7 @@ div.sexy-gils {
     background: #007cb6;
 }
 
-nav .footer {
+nav .footer-socket {
     background: #2e84ff;
     display: block;
     height: 34px;
@@ -1464,15 +1958,15 @@ nav .footer {
     padding-right: 10px;
 }
 
-nav .footer .menu-right > li > a {
+nav .footer-socket .menu-right > li > a {
     font-size: 0.6em;
 }
 
-nav .footer .menu-right > li > a, nav .footer .menu-left > li > a {
+nav .footer-socket .menu-right > li > a, nav .footer-socket .menu-left > li > a {
     color: #fff;
 }
 
-nav .footer .menu-left > li > a > i {
+nav .footer-socket .menu-left > li > a > i {
     font-size:0.8em;   
 }
 

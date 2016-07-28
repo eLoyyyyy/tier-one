@@ -1,6 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 	<header class="genpost-entry-header" itemprop="headline">
-		<?php the_title( sprintf( '<h1 class="genpost-entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>	
+		<?php the_title( sprintf( '<h1 class="genpost-entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php if('post' == get_post_format(  )) : ?>
+		<?php endif;?>
 	</header>
 	<div class="col-md-3 site-pad-rl">
 		<?php if ( has_post_thumbnail() ) { ?>

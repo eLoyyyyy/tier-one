@@ -1,5 +1,9 @@
 /*iOS*/
 @media only screen and (min-width: 320px) and (max-width: 479px){
+
+/*--------------------------------------------------------------
+General
+--------------------------------------------------------------*/
 	.site-pad-rl{
 		padding: 0 15px;
 	}
@@ -8,11 +12,132 @@
 	}
 	.site-pad-l{
 	  padding-left: 15px;
+	}
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+	.site-logo{
+		display: block;
+		float: none;
+		text-align: center;
+	}
+/*--------------------------------------------------------------
+Main Menu
+--------------------------------------------------------------*/
+	.tierone-home-icon{
+		border-bottom: 1px solid #1c63ca;
+		margin: 0 -15px;
+	    display: none;	
+	}
+	.nav > li{
+		border-bottom: 1px solid #1c63ca;
+	}
+	.nav > li:last-child{
+		border-bottom: 1px solid transparent;
+	}
+	.navbar-nav{
+		margin-top: 0;
+	}
+	#header-nav ul li{
+		display: block;
+		height: auto;
+	}
+	.navbar-toggle.collapsed{
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle:hover,
+	.navbar-default .navbar-toggle:focus{
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle {
+	    border-color: #eee;
+	}
+/*--------------------------------------------------------------
+Marquee
+--------------------------------------------------------------*/
+	div.marquee-title{
+		width: 40%;
+	}
+	.marquee-content{
+		padding: 0 5px;
+	}
+	.marquee-content li a {
+	    color: #555;
+	    font-weight: 500;
+	    font-size: 13px;
+		width: 174px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-break: break-all;
+	}
+	.marquee-content #example{
+		height: 68px !important;
+		line-height: 20px;
+	}
+	.social-media-buttons{
+		width: 100%;
+		text-align: center;
+		margin-top: 10px;
+	}
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+	#primary{
+		margin-top: 10px;
+	}
+
+/*--------------------------------------------------------------
+Sidebar
+--------------------------------------------------------------*/
+	.widget-area{
+		border-top: 1px solid #c5ddff;
+		margin-top: 25px;
+	}
+/*--------------------------------------------------------------
+Social Media
+--------------------------------------------------------------*/
+	.main-sidebar .social-media{
+		width: 100%;
+	}
+	.main-sidebar .social-media .sm{
+	    width: 29%;
+	    height: 75px;
+	}
+	.main-sidebar .social-media .sm > a > i{
+		font-size:1.8em;
+	}
+/*--------------------------------------------------------------
+footer
+--------------------------------------------------------------*/
+	nav .footer-socket{
+		height: auto;
+	}
+	.menu-left.pull-left{
+		float: none !important;
+		display: block;
+		margin-top: 10px;
+		text-align: center;
+	}
+	.menu-right.pull-right{
+	    float: none !important;
+	    text-align: center;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	    line-height: 25px;
+	}
+	footer p{
+		margin: 10px 0;
 	}
 }
 
 /*Andriod*/
 @media only screen and (min-width: 480px) and (max-width: 767px){ 
+	
+/*--------------------------------------------------------------
+General
+--------------------------------------------------------------*/
 	.site-pad-rl{
 		padding: 0 15px;
 	}
@@ -22,9 +147,130 @@
 	.site-pad-l{
 	  padding-left: 15px;
 	}
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+	.site-logo{
+		display: block;
+		float: none;
+		text-align: center;
+	}
+/*--------------------------------------------------------------
+Main Menu
+--------------------------------------------------------------*/
+	.tierone-home-icon{
+		border-bottom: 1px solid #1c63ca;
+		margin: 0 -15px;
+	    display: none;	
+	}
+	.nav > li{
+		border-bottom: 1px solid #1c63ca;
+	}
+	.nav > li:last-child{
+		border-bottom: 1px solid transparent;
+	}
+	.navbar-nav{
+		margin-top: 0;
+	}
+	#header-nav ul li{
+		display: block;
+		height: auto;
+	}
+	.navbar-toggle.collapsed{
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle:hover,
+	.navbar-default .navbar-toggle:focus{
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle {
+	    border-color: #eee;
+	}
+/*--------------------------------------------------------------
+Marquee
+--------------------------------------------------------------*/
+	div.marquee-title{
+		width: 37%;
+	}
+	.marquee-content{
+		padding: 0 5px;
+	}
+	.marquee-content li a {
+	    color: #555;
+	    font-weight: 500;
+	    font-size: 13px;
+		width: 174px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-break: break-all;
+	}
+	.marquee-content #example{
+		height: 45px !important;
+		line-height: 20px;
+	}
+	.social-media-buttons{
+		width: 100%;
+		text-align: center;
+		margin-top: 10px;
+	}
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+	#primary{
+		margin-top: 10px;
+	}
+
+/*--------------------------------------------------------------
+Sidebar
+--------------------------------------------------------------*/
+	.widget-area{
+		border-top: 1px solid #c5ddff;
+		margin-top: 25px;
+	}
+/*--------------------------------------------------------------
+Social Media
+--------------------------------------------------------------*/
+	.main-sidebar .social-media{
+		width: 100%;
+	}
+	.main-sidebar .social-media .sm{
+	    width: 31%;
+	    height: 87px;
+	}
+	.main-sidebar .social-media .sm > a > i{
+		font-size:1.8em;
+	}
+/*--------------------------------------------------------------
+footer
+--------------------------------------------------------------*/
+	nav .footer-socket{
+		height: auto;
+	}
+	.menu-left.pull-left{
+		float: none !important;
+		display: block;
+		margin-top: 10px;
+		text-align: center;
+	}
+	.menu-right.pull-right{
+	    float: none !important;
+	    text-align: center;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	    line-height: 25px;
+	}
+	footer p{
+		margin: 10px 0;
+	}
 }
 
 /*tablet*/
-@media only screen and (min-width: 768px) and (max-width: 991px){ ... }
+@media only screen and (min-width: 768px) and (max-width: 991px){ 
+	body{
+		background: red;
+	}
+}
 /*normal*/
 @media only screen and (min-width: 992px) and (max-width: 1999px){ ... }
