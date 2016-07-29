@@ -200,7 +200,7 @@ function tierone_add_active_class($classes, $item) {
 }
 add_filter('nav_menu_css_class', 'tierone_add_active_class', 10, 2 );
 
-
+/*display the menu*/
 function tierone_display_main_menu() {
     wp_nav_menu(
         array( 
@@ -214,7 +214,6 @@ function tierone_display_main_menu() {
         )
     );
 }
-
 
 
 /*requires functions*/

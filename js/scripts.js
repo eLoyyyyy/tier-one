@@ -21,4 +21,10 @@ jQuery(document).ready(function($){
     jQuery('.menu.navbar-right li a').click(function(){
         jQuery('.tierone-search-box').stop(true,false).slideToggle();
     });
+   
+    /*Add class Search widget*/
+    jQuery('.widget .search-form').find('.search-field').addClass('form-control');
+    
+    /*Add class Archieve widget*/
+    jQuery('section.widget').find('select').addClass('form-control');
 });

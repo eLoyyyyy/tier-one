@@ -53,6 +53,26 @@ Main Menu
 	.navbar-default .navbar-toggle {
 	    border-color: #eee;
 	}
+
+	/*Search Menu*/
+	.tierone-search-box{
+		margin: 10px 0 20px;
+	}
+	.tierone-search-container{
+		position: relative;
+		top: 0;
+		width: 100%;
+	}
+	.tierone-search-container input[type="text"]{
+	    width: 66%;
+	    float: left;
+	}
+
+	/*Social Menu*/
+	.social-media-buttons{
+		width: 100%;
+		text-align: center
+	}
 /*--------------------------------------------------------------
 Marquee
 --------------------------------------------------------------*/
@@ -76,7 +96,7 @@ Marquee
 		height: 68px !important;
 		line-height: 20px;
 	}
-	.social-media-buttons{
+	#footer-socket-social.social-media-buttons{
 		width: 100%;
 		text-align: center;
 		margin-top: 10px;
@@ -187,6 +207,25 @@ Main Menu
 	.navbar-default .navbar-toggle {
 	    border-color: #eee;
 	}
+	/*Search Menu*/
+	.tierone-search-box{
+		margin: 10px 0 20px;
+	}
+	.tierone-search-container{
+		position: relative;
+		top: 0;
+		width: 100%;
+	}
+	.tierone-search-container input[type="text"]{
+	    width: 80%;
+	    float: left;
+	}
+
+	/*Social Menu*/
+	.social-media-buttons{
+		width: 100%;
+		text-align: center
+	}
 /*--------------------------------------------------------------
 Marquee
 --------------------------------------------------------------*/
@@ -210,7 +249,7 @@ Marquee
 		height: 45px !important;
 		line-height: 20px;
 	}
-	.social-media-buttons{
+	#footer-socket-social.social-media-buttons{
 		width: 100%;
 		text-align: center;
 		margin-top: 10px;
@@ -268,9 +307,34 @@ footer
 
 /*tablet*/
 @media only screen and (min-width: 768px) and (max-width: 991px){ 
-	body{
-		background: red;
+
+/*--------------------------------------------------------------
+Main Menu
+--------------------------------------------------------------*/
+	/*Search Menu*/
+	.tierone-search-container{
+		width: 45%;
+	}
+	/*Social Mennu*/
+	.social-media-buttons{
+		width: 23%;
+	}
+/*--------------------------------------------------------------
+Marquee
+--------------------------------------------------------------*/
+	div.marquee-title{
+		width: 25%;
+	}
+	.marquee-content{
+		width: 50%;
 	}
 }
 /*normal*/
-@media only screen and (min-width: 992px) and (max-width: 1999px){ ... }
+@media only screen and (min-width: 992px) and (max-width: 1999px){
+/*--------------------------------------------------------------
+Main Menu
+--------------------------------------------------------------*/
+	.tierone-search-container{
+		width: 35%;
+	}
+}

@@ -1,36 +1,31 @@
-<nav>
-    <div class="container">
-    <div class="row">
-        <div class="footer-socket clearfix">
-            <ul class="menu-left pull-left list-inline">
-                <li><a href=""><i class="fa fa-facebook" aria-hidden="false"></i></a></li>
-                <li><a href=""><i class="fa fa-twitter" aria-hidden="false"></i></a></li>
-                <li><a href=""><i class="fa fa-pinterest-p" aria-hidden="false"></i></a></li>
-                <li><a href=""><i class="fa fa-google-plus" aria-hidden="false"></i></a></li>
-                <li><a href=""><i class="fa fa-youtube" aria-hidden="false"></i></a></li>
-                <li><a href=""><i class="fa fa-linkedin" aria-hidden="false"></i></a></li>
-            </ul>
-            <ul class="menu-right pull-right list-inline">
-                <li><a href="">HOME</a></li>
-                <li><a href="">BLOG</a></li>
-                <li><a href="">LATEST</a></li>
-                <li><a href="">FEATURED</a></li>
-                <li><a href="">CONTACT US</a></li>
-            </ul>
-        </div>
-    </div>
-    </div>
-
-</nav>
-
-<footer>
-    <div class="container text-center">
-        <p><small>Designed by Niel Rosini. Built by JEJABRY.</small></p>
-        <p><small>&copy; 2016. All Rights Reversed.</small></p>
-    </div>
-</footer>
-
-<?php wp_footer(); ?>
-
-</body>
+        <nav class="container">
+            <div class="row">
+                <div class="footer-socket clearfix">
+                  <div id="footer-socket-social" class="social-media-buttons pull-left list-inline">
+                         <?php my_social_media_icons();?>
+                    </div>
+                    <?php
+                           /**
+                            * Displays a navigation menu
+                            * @param tierone
+                            */
+                            $args = array(
+                                'theme_location' => 'footer-menu',
+                                'menu_class' => 'menu-right pull-right',
+                                'menu_id' => 'footer_menu',
+                            );
+                        
+                            wp_nav_menu( $args );
+                    ?>
+                </div>
+            </div>
+        </nav>
+        <footer>
+            <div class="container text-center">
+                <p><?php _e('<small>Designed by Niel Rosini. Built by JEJABRY.</small>','tierone'); ?></p>
+                <p><?php _e('<small>&copy; 2016. All Rights Reversed.</small>','tierone')?></small></p>
+            </div>
+        </footer><!--end of footer-->
+        <?php wp_footer(); ?>
+    </body>
 </html>

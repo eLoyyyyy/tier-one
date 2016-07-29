@@ -8,14 +8,8 @@
 
 				<?php endwhile;?>
 			</main>
-			<ul class="pager">
-				<li class="previous">
-					<?php if( get_next_posts_link() ) : next_posts_link( '« Old Post '); endif; ?>
-				</li>
-				<li class="next">
-					<?php if( get_previous_posts_link() ) : previous_posts_link( ' New Post »' ); endif; ?>
-				</li>
-			</ul>
+			<?php tierone_next_prev_link();?> <!-- Next and prev-->
+			<span class="cleafix"></span>
 			<?php
 				get_template_part( 'content', 'related' ); //related post
 				comments_template( '', true ); // comments

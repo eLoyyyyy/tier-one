@@ -27,10 +27,10 @@ if ( !function_exists( 'tierone_sidebar' ) ):
         register_sidebar( array(
             'name' => __( 'Main Sidebar', 'tierone' ),
             'id' => 'main-sidebar',
-            'before_widget' => '',
-            'after_widget' => '',
-            'before_title' => '<h2>',
-            'after_title' => '</h2>',
+            'before_widget' => '<section id="%1$s" class="widget %1$s">',
+            'after_widget' => '</section>',
+            'before_title'  => '<div class="widget-title-container"><h2 class="widget-title">',
+            'after_title' => '</h2></div>',
             'description' => __( 'Main Sidebar for Front Page of Tier-One Theme', 'tierone' ),
         ) );
 
@@ -129,3 +129,36 @@ function tierone_posted_on() {
 
 }
 endif;
+
+/*featured image*/
+function tierone_featured_image(){
+    if ( post_password_required() || ! has_post_thumbnail() ) {
+        return;
+    }
+
+   if ( is_singular() ) : 
+        if ( get_theme_mod( 'show_article_featured_image', 1 ) ) { ?>
+            <div class="article-featured-image">
+                <?php the_post_thumbnail( 'featured-slider' ); ?>
+            </div>
+        <?php } ?>
+    <?php else : ?>
+        <div class="article-preview-image">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>
+        </div>
+    <?php endif;
+}
+
+/*next post & prev post*/
+
+function tierone_next_prev_link()
+{
+     if (get_next_post() || get_previous_post()) { ?>
+        <nav class="clearfix block">
+            <ul class="page-numbers pull-right">
+                <li class="previous"><?php previous_post_link('%link', "&laquo; " . __( 'Previous Post', "tierone")); ?></li>
+                <li class="next"><?php next_post_link('%link', __( 'Next Post', "tierone") . " &raquo;"); ?></li>
+            </ul>
+        </nav>
+    <?php } 
+}

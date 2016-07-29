@@ -80,30 +80,28 @@
                     </button>
                     <!-- <a class="navbar-brand" title="<?php bloginfo('name');?>" href="<?php echo esc_html(home_url('/'));?>"><?php bloginfo('name');?></a> -->
                 </div>
-                <?php if (has_nav_menu("header-menu")): ?>
-                    <div id="tierone_nav" class="navbar-collapse collapse">
-                        <span class="tierone-home-icon">
-                            <a itemprop='url' title="<?php bloginfo('name');?>" href="<?php echo esc_html(home_url('/'));?>"><i class="fa fa-home" aria-hidden="true"></i></a>
-                        </span>
+                <div id="tierone_nav" class="navbar-collapse collapse">
+                    <span class="tierone-home-icon">
+                        <a itemprop='url' title="<?php bloginfo('name');?>" href="<?php echo esc_html(home_url('/'));?>"><i class="fa fa-home" aria-hidden="true"></i></a>
+                    </span>
+                    <?php if (has_nav_menu("header-menu")): ?>
                         <?php tierone_display_main_menu(); ?>
-                        <ul class='menu navbar-right' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
-                            <li itemprop='name'><a itemprop='url'><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <div class="tierone-search-box">
-                            <div class="tierone-search-container">
-                                <form action="<?php echo esc_url(home_url('/'));?>" id="tierone-search-form" method="get">
-                                    <input type="text" name="search" placeholder="Search …">
-                                    <input type="submit" value="<?php _e( 'Search', 'tierone' ); ?>" />
-                                </form>
-                            </div>
+                    <?php endif;?>
+                    <ul class='menu navbar-right' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
+                        <li itemprop='name'><a itemprop='url'><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="tierone-search-box">
+                        <div class="tierone-search-container clearfix">
+                            <form action="<?php echo esc_url(home_url('/'));?>" id="tierone-search-form" method="get">
+                                <input type="text" name="s" id="s" placeholder="Search …">
+                                <input type="submit" value="<?php _e( 'Search', 'tierone' ); ?>" />
+                            </form>
                         </div>
                     </div>
-                <?php endif;?>
+                </div>
             </nav>
         </div>
     </div>
-
-        
     <aside id="current">
         <div class="container site-pad-rl">
             <div class="marquee-title">MARQUEE SECTION</div>
@@ -117,12 +115,7 @@
                 </div>
             </div>
             <div class="social-media-buttons">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                <i class="fa fa-youtube" aria-hidden="true"></i>
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                 <?php my_social_media_icons();?>
             </div>
         </div>
     </aside>

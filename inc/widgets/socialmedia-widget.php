@@ -34,7 +34,7 @@ class socialmedia_widget extends WP_Widget {
         <div class="sm sm-google-plus"><a href=""><i class="fa fa-google-plus fa-2x" aria-hidden="false"></i></a></div>
         <div class="sm sm-youtube"><a href=""><i class="fa fa-youtube fa-2x" aria-hidden="false"></i></a></div>
         <div class="sm sm-linkedin"><a href=""><i class="fa fa-linkedin fa-2x" aria-hidden="false"></i></a></div>
-
+        <span class="clearfix"></span>
         <?php
 
         // This is where you run the code and display the output
