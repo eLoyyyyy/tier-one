@@ -20,6 +20,6 @@
 		 <h3 class="entry-meta site-meta-t">
 		 	<small> <i class="fa fa-calendar"> </i> : <?php the_time('F j, Y '); ?> / <i class="fa fa-folder-o"></i> : <?php the_category(' , ');?> <?php the_comment();?></small>
 		 </h3>
-		<?php tierone_excerpt(45);?>
+		<?php the_excerpt();?>
 	</div>
 </article>

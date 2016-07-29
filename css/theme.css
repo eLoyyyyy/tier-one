@@ -814,11 +814,37 @@ aside, nav {
 }
 
 .main-sidebar .social-media .sm.sm-youtube {
-    background: #c01f25;
+  background: #c01f25;
 }
 
 .main-sidebar .social-media .sm.sm-linkedin {
-    background: #007cb6;
+  background: #007cb6;
+}
+/*rss*/
+#rss-2 .rsswidget{
+  font-size: 16px;
+  font-weight: 600;
+}
+#rss-2 .rss-date{
+  font-style: italic;
+}
+#rss-2 ul li{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#rss-2 .rssSummary{
+  font-size: 15px;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 10px;
+  line-height: 1.3;
+}
+#rss-2 ul li:last-child .rssSummary{
+  border-bottom: 1px solid transparent;
+}
+/*Text widget*/
+.widget .textwidget{
+  font-size: 16px;
+  padding: 0 0.6em;
 }
 /*--------------------------------------------------------------
 10.0 Content
@@ -860,6 +886,8 @@ aside, nav {
 .site-logo {
   display: inline;
   float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .site-title-text {
@@ -873,6 +901,12 @@ aside, nav {
 .site-footer {
   background: #323232;
   margin-top: 40px;
+}
+.site-adds-wrap{
+  float: right;
+  padding: 10px 10px;
+  display: inline;
+  min-height: 56px;
 }
 
 .fr {
@@ -1214,7 +1248,7 @@ aside, nav {
   color: #404040 !important;
 }
 .moretag:hover {
-  color: #fa5742 !important;
+  color: #2e84ff !important;
 }
 
 /*related*/

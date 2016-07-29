@@ -21,6 +21,12 @@ Header
 		display: block;
 		float: none;
 		text-align: center;
+		margin: 10px auto;
+	}
+	.site-adds-wrap{
+		float: none;
+		width: 100%;
+		text-align: center;
 	}
 /*--------------------------------------------------------------
 Main Menu
@@ -174,6 +180,12 @@ Header
 	.site-logo{
 		display: block;
 		float: none;
+		text-align: center;
+		margin: 10px auto;
+	}
+	.site-adds-wrap{
+		float: none;
+		width: 100%;
 		text-align: center;
 	}
 /*--------------------------------------------------------------

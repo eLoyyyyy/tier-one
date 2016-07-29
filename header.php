@@ -55,6 +55,14 @@
                         </div>
                 <?php } ?>
             </div><!-- .site-branding -->
+                <div class="col-md-8 site-adds-wrap">
+                    <?php if ( is_active_sidebar( 'horizontal-ad-1' ) ) : ?>
+                        <div class="header-ad">
+                            <?php dynamic_sidebar( 'horizontal-ad-1' ); ?> 
+                        </div><!--header ad-->
+                    <?php endif; ?> 
+                </div>
+
         </div><!-- .site-header-main -->
 
         <?php if ( get_header_image() ) : ?>
