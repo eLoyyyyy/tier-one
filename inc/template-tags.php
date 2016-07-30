@@ -1,9 +1,9 @@
 <?php
 
 // automatically retrieve the first image from posts
-function get_first_image($single_post = true) {
+function get_first_image($single_post = null) {
     global $post, $posts;
-    $isnot = ($single_post) ? $single_post : false;
+    $isnot = ($single_post) ? true : false;
     $first_img = '';
     ob_start();
     ob_end_clean();
@@ -13,7 +13,6 @@ function get_first_image($single_post = true) {
         // defines a fallback imaage
         $first_img = get_template_directory_uri() . "/images/default.jpg";
     endif;
-
     if ($isnot == false) : ?>
         <div class="featured-image" style="background: url('<?php echo $first_img; ?>')"></div>
     <?php else : ?>
