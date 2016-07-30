@@ -1837,7 +1837,10 @@ div.marquee-title:after {
 }
 
 .catstyle1a-post .featured-image {
-    height: 265px;
+    height: 173px;
+    background-size: cover !important;
+    background-position: 50% !important;
+    background-repeat: no-repeat !important;
 }
  
 .catstyle1a-post .caption {
@@ -2045,7 +2048,10 @@ aside.horizontal-ad h2 {
 }
 
 .catstyle3-post div.featured-image {
-    height: 235px;
+    /*height: 235px;*/
+    height: 205px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
 
 .catstyle3-post {
@@ -2217,14 +2223,17 @@ nav .footer-socket {
     padding-left: 10px;
     padding-right: 10px;
 }
+nav .footer-socket .menu-right,
 nav .footer-socket .menu-right ul{
   margin: 0;
   padding-right: 0;
 }
+nav .footer-socket .menu-right li,
 nav .footer-socket .menu-right ul li{
   list-style: none;
   display: inline-block;
 }
+nav .footer-socket .menu-right > li > a,
 nav .footer-socket .menu-right ul > li > a {
     color: #fff;
     padding: 0px 10px;
