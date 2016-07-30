@@ -8,7 +8,6 @@
                 <?php the_title( sprintf('<h2 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
                 <p class="featured-excerpt"><?php tierone_excerpt('regular'); ?></p>
-                <a class="read-more" href="<?php the_permalink(); ?>">Read More ...</a>
             </div>
         </div>
     </div>

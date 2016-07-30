@@ -114,12 +114,41 @@ Content
 		margin-top: 10px;
 	}
 
+
+	/*Featured Post*/
+	.catstyle1b-post{
+		height: auto;
+		margin-top: 10px;
+	}
+	.caption{
+		margin-top: 10px;
+	}
+	.catstyle1b-post:after{
+		bottom: -15px;
+	}
 /*--------------------------------------------------------------
 Sidebar
 --------------------------------------------------------------*/
 	.widget-area{
 		border-top: 1px solid #c5ddff;
 		margin-top: 25px;
+	}
+
+	/*tierone recent post*/
+	.random-post .col-lg-4,
+	.random-post .col-lg-8{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	}
+	.random-post .tierone-random-image, 
+	.random-post .attachment-post-thumbnail{
+		height:auto;
+	}
+	.random-post .h3-mod a{
+		margin-top: 10px;
+	}
+	.main-sidebar .random-post .random-post-line{
+		margin-bottom: 20px;
 	}
 /*--------------------------------------------------------------
 Social Media
@@ -272,13 +301,41 @@ Content
 	#primary{
 		margin-top: 10px;
 	}
-
+	
+	/*Featured Post*/
+	.catstyle1b-post{
+		height: auto;
+		margin-top: 10px;
+	}
+	.caption{
+		margin-top: 10px;
+	}
+	.catstyle1b-post:after{
+		bottom: -15px;
+	}
 /*--------------------------------------------------------------
 Sidebar
 --------------------------------------------------------------*/
 	.widget-area{
 		border-top: 1px solid #c5ddff;
 		margin-top: 25px;
+	}
+
+	/*tierone recent post*/
+	.random-post .col-lg-4,
+	.random-post .col-lg-8{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	}
+	.random-post .tierone-random-image, 
+	.random-post .attachment-post-thumbnail{
+		height:auto;
+	}
+	.random-post .h3-mod a{
+		margin-top: 10px;
+	}
+	.main-sidebar .random-post .random-post-line{
+		margin-bottom: 20px;
 	}
 /*--------------------------------------------------------------
 Social Media
@@ -340,13 +397,59 @@ Marquee
 	.marquee-content{
 		width: 50%;
 	}
+/*--------------------------------------------------------------
+Sidebar
+--------------------------------------------------------------*/
+
+	/*tierone recent post*/
+	.random-post .col-lg-4,
+	.random-post .col-lg-8{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	}
+	.random-post .tierone-random-image, 
+	.random-post .attachment-post-thumbnail{
+		height:auto;
+	}
+	.random-post .h3-mod a{
+		margin-top: 10px;
+	}
+	.main-sidebar .random-post .random-post-line{
+		margin-bottom: 20px;
+	}
 }
+
 /*normal*/
-@media only screen and (min-width: 992px) and (max-width: 1999px){
+@media only screen and (min-width: 992px) and (max-width: 1199px){
 /*--------------------------------------------------------------
 Main Menu
 --------------------------------------------------------------*/
 	.tierone-search-container{
 		width: 35%;
+	}
+/*--------------------------------------------------------------
+Sidebar
+--------------------------------------------------------------*/
+	.widget-area{
+		border-top: 1px solid #c5ddff;
+		margin-top: 25px;
+	}
+
+	/*tierone recent post*/
+	.random-post .col-lg-4,
+	.random-post .col-lg-8{
+	    padding-left: 15px;
+	    padding-right: 15px;
+	}
+	.random-post .tierone-random-image, 
+	.random-post .attachment-post-thumbnail{
+		height:auto;
+	}
+	.random-post .h3-mod a{
+		margin-top: 10px;
+	}
+	.main-sidebar .random-post .random-post-line{
+	    margin-top: 20px;
+	    margin-bottom: 20px;
 	}
 }

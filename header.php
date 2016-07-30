@@ -55,7 +55,7 @@
                         </div>
                 <?php } ?>
             </div><!-- .site-branding -->
-                <div class="col-md-8 site-adds-wrap">
+                <div class="col-md-7 site-adds-wrap">
                     <?php if ( is_active_sidebar( 'horizontal-ad-1' ) ) : ?>
                         <div class="header-ad">
                             <?php dynamic_sidebar( 'horizontal-ad-1' ); ?> 
@@ -124,6 +124,6 @@
             </div>
             <div class="social-media-buttons">
                  <?php my_social_media_icons();?>
-            </div>
+            </div><!-- Social media icons -->
         </div>
     </aside>

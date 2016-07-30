@@ -16,7 +16,7 @@
 			</figure>
 		<?php } ?>
 	</div>
-	<div class="col-md-8 genpost-entry-content" itemprop="text">
+	<div class="col-md-9 genpost-entry-content" itemprop="text">
 		 <h3 class="entry-meta site-meta-t">
 		 	<small> <i class="fa fa-calendar"> </i> : <?php the_time('F j, Y '); ?> / <i class="fa fa-folder-o"></i> : <?php the_category(' , ');?> <?php the_comment();?></small>
 		 </h3>

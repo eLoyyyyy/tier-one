@@ -1,22 +1,24 @@
 <?php
 
 // automatically retrieve the first image from posts
-function get_first_image($single_post = false) {
+function get_first_image($single_post = true) {
     global $post, $posts;
+    $isnot = ($single_post) ? $single_post : false;
     $first_img = '';
     ob_start();
     ob_end_clean();
     $output = preg_match_all( '/<img .+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
     $first_img = $matches[1][0];
-    if ( empty( $first_img ) ) {
+    if ( empty( $first_img ) ) :
         // defines a fallback imaage
         $first_img = get_template_directory_uri() . "/images/default.jpg";
-    }
-    if ($single_post == false) : 
-        ?><div class="featured-image" style="background: url('<?php echo $first_img; ?>')"></div><?php
-    else :
-        ?><img src="<?php echo $first_img; ?>" /><?php
-    endif; 
+    endif;
+
+    if ($isnot == false) : ?>
+        <div class="featured-image" style="background: url('<?php echo $first_img; ?>')"></div>
+    <?php else : ?>
+        <img class="tierone-random-image img-responsive" src="<?php echo $first_img; ?>"/>
+    <?php endif; 
 }
 
 

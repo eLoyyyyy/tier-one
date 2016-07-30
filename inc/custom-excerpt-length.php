@@ -73,7 +73,7 @@ add_filter( 'excerpt_more','tierone_excerpt_length' );
 /*Custom Excerpt*/
 function tierone_custom_lenght($text){
     
-    $excerpt = '' . strip_tags($text) . '<a class="moretag" href="'. get_permalink() . '"> ' . wp_kses_post( get_theme_mod( 'read_more_text', '[ Read More ]' ) ) . '</a>';
+    $excerpt = '' . strip_tags($text) . '<a class="moretag " href="'. get_permalink() . '"> ' . wp_kses_post( get_theme_mod( 'read_more_text', 'Read More <i class="fa fa-angle-double-right"></i>' ) ) . '</a>';
     return $excerpt;
 }
 add_filter( 'the_excerpt' , 'tierone_custom_lenght');

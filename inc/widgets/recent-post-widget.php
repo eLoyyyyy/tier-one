@@ -26,33 +26,33 @@ class wpb_widget extends WP_Widget {
         
         $rp = '';
         query_posts( 'posts_per_page=5&order=DESC' );
-
-        
-        ?><div class="recent-posts">
-            <div class="row"><?php
-        // the Loop
-        while (have_posts()) : the_post(); ?>
-            <div class="col-lg-12 random-post">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="<?php the_permalink(); ?>"><?php ( has_post_thumbnail() ) ? the_post_thumbnail() : get_first_image(); ?></a>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="recent-post">
-                            <span class="text-right">
-                                <h3 class="h3-mod"><a href="<?php esc_url( the_permalink() );?>"><?php the_title(); ?></a></h3>
-                                <p><small><?php the_time('M j, Y g:i a'); ?></small></p>
-                            </span>
+        ?>
+            <div class="recent-posts">
+                <?php while (have_posts()) : the_post(); //start looping ?>
+                    <div class="col-lg-12 random-post">
+                        <div class="row clearfix">
+                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <a href="<?php the_permalink(); ?>"><?php ( has_post_thumbnail() ) ? the_post_thumbnail() : get_first_image(); ?></a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                <div class="recent-post">
+                                    <span class="text-left">
+                                        <h3 class="h3-mod"><a href="<?php esc_url( the_permalink() );?>"><?php the_title(); ?></a></h3>
+                                        <p><small><?php the_time('M j, Y g:i a'); ?></small></p>
+                                    </span>
+                                    <div class="random-content">
+                                        <?php tierone_excerpt(7);?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><hr class="random-post-line"></div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12"><hr class="random-post-line"></div>
-                </div>
+                <?php endwhile; ?>
             </div>
-        <?php endwhile;
-            ?></div>
-        </div><?php
+        <?php
    
 
         // This is where you run the code and display the output
