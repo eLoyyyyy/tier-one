@@ -9,7 +9,7 @@
                     <?php the_title( sprintf('<h2 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                 </div>
                 <p class="featured-date"><small><?php the_time('M j, Y g:i a'); ?></small></p>
-                <div class="entry-content"><?php tierone_excerpt(2);?></div>
+                <div class="entry-content"><?php tierone_excerpt(5);?></div>
             </div>
         </div>
     </div>
