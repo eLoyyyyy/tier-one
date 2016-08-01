@@ -26,7 +26,7 @@
     </noscript>
     <![endif]-->
    <header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
-        <div class="container site-header-main site-pad-rl">
+        <div class="container site-header-main site-pad-rl bg-default">
            <div class="site-branding">
                 <?php  
                     $logo = get_theme_mod( 'site_logo', '' );
@@ -76,7 +76,7 @@
             </div><!-- .header-image -->
         <?php endif; // End header image check. ?>
     </header>
-    <div class="container">
+    <div class="container bg-default">
         <div class="row">
             <nav id="header-nav" class="navbar navbar-default navbar-static-top">
                 <div class="navbar-header">
@@ -110,8 +110,8 @@
             </nav>
         </div>
     </div>
-    <aside id="current">
-        <div class="container site-pad-rl">
+    <aside id="current" class="current_wrap">
+        <div class="container site-pad-rl bg-default site-pad-tb">
             <div class="marquee-title">MARQUEE SECTION</div>
             <div class="marquee-content">
                 <div id="example">

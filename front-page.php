@@ -1,7 +1,7 @@
 <?php /* Template Name: Front Page */ ?>
 
 <?php get_header(); ?>
-<div class="container site-pad-rl">
+<div class="container site-pad-rl bg-default">
     <main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
         <?php $args = array( 'posts_per_page' => 6, 'cat' => 80 ); query_posts($args); $i = 1; $active = true; ?>
         <?php if(have_posts()) : ?>

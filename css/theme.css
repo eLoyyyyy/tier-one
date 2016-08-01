@@ -851,10 +851,15 @@ aside, nav {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+.current_wrap{
+  margin-top: 0;
+}
 /*--------------------------------------------------------------
 10.1 Site Main
 --------------------------------------------------------------*/
-
+.bg-default{
+  background-color: #fff;
+}
 .site-pad-rl{
     padding-left: 0;
     padding-right: 0;
@@ -865,7 +870,10 @@ aside, nav {
 .site-pad-l{
   padding-left: 0;
 }
-
+.site-pad-tb{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .site-title{
     font-family: sans-serif;
     font-size: 44px;
@@ -906,7 +914,8 @@ aside, nav {
 }
 .site-adds-wrap{
   float: right;
-  padding: 10px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: inline;
   min-height: 56px;
 }
@@ -942,6 +951,7 @@ aside, nav {
 }
 .genpost-entry-content{
   margin: 0px 0 30px 0;
+  padding: 0 10px;
   font-size: 14px;
   text-align: justify;
 }
@@ -1085,6 +1095,8 @@ aside, nav {
 .entry-summary {
   margin: 1.5em 0 0;
   font-size: 14px;
+  padding-left:10px;
+  padding-right:10px;
 }
 .page-content a:hover,
 .entry-content a:hover,
@@ -1677,8 +1689,8 @@ div.marquee-title{
     vertical-align: top;
     width: 17%;
     float: left;
-    
     font-size: 16px;
+    z-index: 2;
 }
 div.marquee-title:after {
     content: '';
@@ -2250,10 +2262,11 @@ nav .footer-socket .menu-left > li > a > i {
 #footer-socket-social ul li a{
   color:#fff;
 }
-footer{
-  margin-top: 15px;
-  margin-bottom: 15px;
+footer .footer-wrap{
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
+
 footer p {
     margin: 0px;
     line-height: 0.7em;

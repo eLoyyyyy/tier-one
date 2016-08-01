@@ -1,5 +1,5 @@
 <?php get_header();?>
-<div class="container site-pad-rl">
+<div class="container site-pad-rl bg-default">
 	<div id="primary" class="col-lg-9 content-area">
 		<div class="row">
 			<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
