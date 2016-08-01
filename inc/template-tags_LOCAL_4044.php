@@ -13,7 +13,6 @@ function get_first_image($src = null) {
         // defines a fallback imaage
         $first_img = get_template_directory_uri() . "/images/default.jpg";
     endif;
-<<<<<<< HEAD
 
     if ($isnot == false) : 
         _featured_image($first_img);
@@ -22,13 +21,6 @@ function get_first_image($src = null) {
 
 function _featured_image($image_src) {
     ?><div class="featured-image" style="background: url('<?php echo $image_src; ?>')"></div><?php
-=======
-    if ($isnot == false) : ?>
-        <div class="featured-image" style="background: url('<?php echo $first_img; ?>')"></div>
-    <?php else : ?>
-        <img class="tierone-random-image img-responsive" src="<?php echo $first_img; ?>"/>
-    <?php endif; 
->>>>>>> 2e8e908ca5b528215537d8109c531330296ef65d
 }
 
 
