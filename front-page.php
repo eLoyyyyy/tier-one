@@ -51,7 +51,7 @@
         <div class="col-lg-9 content-area">
             <div class="row featured-content-area clearfix">
                  <div class="col-lg-4">
-                    <?php $args = array( 'posts_per_page' => 3, 'cat' => 3 ); query_posts($args); $catstyle1= true; ?>
+                    <?php $args = array( 'posts_per_page' => 3, 'cat' => 72 ); query_posts($args); $catstyle1= true; ?>
                     <?php if(have_posts()) : ?>
                         <?php while( have_posts() ) : the_post(); ?>
                             <?php if ($catstyle1 == true) : ?>
@@ -64,7 +64,7 @@
                      <?php endif; ?>
                 </div>
                  <div class="col-lg-4">
-                    <?php $args = array( 'posts_per_page' => 3, 'cat' => 5 ); query_posts($args); $catstyle1= true;?>
+                    <?php $args = array( 'posts_per_page' => 3, 'cat' => 37 ); query_posts($args); $catstyle1= true;?>
                     <?php if(have_posts()) : ?>
                         <?php while( have_posts() ) : the_post(); ?>                            
                             <?php if ($catstyle1 == true) : ?>
@@ -77,7 +77,7 @@
                      <?php endif; ?>
                 </div>
                  <div class="col-lg-4">
-                    <?php $args = array( 'posts_per_page' => 3, 'cat' => 4 ); query_posts($args); $catstyle1= true;?>
+                    <?php $args = array( 'posts_per_page' => 3, 'cat' => 37 ); query_posts($args); $catstyle1= true;?>
                     <?php if(have_posts()) : ?>
                         <?php while( have_posts() ) : the_post(); ?>
                                 <?php if ($catstyle1 == true) : ?>
@@ -95,7 +95,7 @@
                     <?php get_template_part('templates/horizontal', 'ad'); ?>
                 </div>
             </div>
-            <?php $args = array( 'posts_per_page' => 5, 'cat' => 4 ); query_posts($args);?>
+            <?php $args = array( 'posts_per_page' => 5, 'cat' => 37 ); query_posts($args);?>
             <?php if(have_posts()) : ?>
             <div class="row">
                     <?php while( have_posts() ) : the_post(); ?>
@@ -105,7 +105,7 @@
                     <?php endwhile; ?>
             </div>
             <?php endif; ?>
-            <?php $args = array( 'posts_per_page' => 2, 'cat' => 5 ); query_posts($args);?>
+            <?php $args = array( 'posts_per_page' => 2, 'cat' => 76 ); query_posts($args);?>
             <?php if(have_posts()) : ?>
             <div class="row">
                     <?php while( have_posts() ) : the_post(); ?>

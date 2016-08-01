@@ -3,7 +3,10 @@
 
         <!-- <div class="featured-content"><?php the_title( sprintf('<h2 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
         </div>  -->
-        <?php ( has_post_thumbnail() ) ? the_post_thumbnail() : get_first_image(); ?>
+        <?php 
+        $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) ); 
+        ( has_post_thumbnail() ) ? _featured_image( $src[0] ) : get_first_image(); 
+        ?>
         <div class="carousel-caption">
             <div class="entry-title-div">
                 <?php the_title( sprintf('<h2 class="entry-title"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>

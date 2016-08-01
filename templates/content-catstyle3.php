@@ -1,7 +1,12 @@
 <article class="catstyle3-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="row">
         <div class="col-lg-5">
-            <a href="<?php the_permalink(); ?>"><?php ( has_post_thumbnail() ) ? the_post_thumbnail() : get_first_image(); ?></a>
+            <a href="<?php the_permalink(); ?>">
+            <?php
+            $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) ); 
+            ( has_post_thumbnail() ) ? _featured_image( $src[0] ) : get_first_image(); 
+            ?>
+            </a>
         </div>
         <div class="col-lg-7">
             <div class="post-content">

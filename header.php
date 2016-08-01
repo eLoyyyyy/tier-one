@@ -115,10 +115,18 @@
             <div class="marquee-title">MARQUEE SECTION</div>
             <div class="marquee-content">
                 <div id="example">
-                    <ul>
+                    <!-- <ul>
                         <li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</a></li>
                         <li><a href="">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</a></li>
                         <li><a href="">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</a></li>
+                    </ul> -->
+                    <ul>
+                    <?php $args = array( 'posts_per_page' => 10); query_posts($args); ?>
+                    <?php if(have_posts()) : ?>
+                        <?php while( have_posts() ) : the_post(); ?>  
+                            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></li>               
+                        <?php endwhile; ?>
+                     <?php endif; ?>
                     </ul>
                 </div>
             </div>
