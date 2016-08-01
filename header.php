@@ -133,6 +133,7 @@
 								<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></li>               
 							<?php endwhile; ?>
 						 <?php endif; ?>
+                         <?php wp_reset_query(); ?>
 						</ul>
 					</div>
 				</div>

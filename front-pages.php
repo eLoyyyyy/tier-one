@@ -47,6 +47,7 @@
                 </div><!-- /.carousel -->
             </div>
         </div>
+		<?php wp_reset_query(); ?>
         <?php endif; ?>
 
         <div class="col-lg-9 content-area">
@@ -62,6 +63,7 @@
                             <?php endif; 
                             $catstyle1 = false;?>
                         <?php endwhile; ?> 
+					 <?php wp_reset_query(); ?>
                      <?php endif; ?>
                 </div>
                  <div class="col-lg-4">
@@ -75,6 +77,7 @@
                             <?php endif; 
                             $catstyle1 = false; ?>                            
                         <?php endwhile; ?>
+					 <?php wp_reset_query(); ?>
                      <?php endif; ?>
                 </div>
                  <div class="col-lg-4">
@@ -88,6 +91,7 @@
                                 <?php endif; 
                                 $catstyle1 = false;?>
                         <?php endwhile; ?>
+					 <?php wp_reset_query(); ?>
                      <?php endif; ?>
                 </div>
             </div>
@@ -105,6 +109,7 @@
                             </div>
                     <?php endwhile; ?>
             </div>
+			<?php wp_reset_query(); ?>
             <?php endif; ?>
             <?php $args = array( 'posts_per_page' => 2, 'cat' => 76 ); query_posts($args);?>
             <?php if(have_posts()) : ?>
@@ -115,6 +120,7 @@
                             </div>
                     <?php endwhile; ?> 
             </div>
+			<?php wp_reset_query(); ?>
             <?php endif; ?>
             
             <?php 

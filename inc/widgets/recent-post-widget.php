@@ -53,7 +53,7 @@ class wpb_widget extends WP_Widget {
                 <?php endwhile; ?>
             </div>
         <?php
-   
+        wp_reset_query();
 
         // This is where you run the code and display the output
         echo __( $rp, 'wpb_widget_domain' );

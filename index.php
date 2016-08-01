@@ -34,7 +34,7 @@
 
 			<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; wp_reset_query(); ?>
+		<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- .bootstrap cols -->
 	<div class="col-lg-3 site-pad-r">
