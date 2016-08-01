@@ -2310,3 +2310,24 @@ footer p small{
     color: #2e84ff;
 }
 
+.padded-container > .container-fluid:first-child {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+@media (min-width: 768px) {
+  .padded-container > .container-fluid:first-child {
+    width: 810px;
+  }
+}
+@media (min-width: 992px) {
+  .padded-container > .container-fluid:first-child {
+    width: 1030px;
+  }
+}
+@media (min-width: 1200px) {
+  .padded-container > .container-fluid:first-child {
+    width: 1260px;
+  }
+}
