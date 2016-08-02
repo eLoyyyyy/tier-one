@@ -26,22 +26,26 @@ if (get_theme_mod('tierone_related_post',true)) :
 	    
 	    <div class="wrapper row">
 	        <?php while( $posts_related->have_posts() ) : $posts_related->the_post(); ?>
-	            <article class="col-md-4">
+	            <article class="col-md-4" itemscope itemtype="http://schema.org/ItemPage">
 	                <div class="thumbnail">
 	                <?php
 	                    // Get featured image
 	                    if ( has_post_thumbnail() ) {
-	                        echo '<a href="'. get_permalink() .'" title="'. get_the_title() .'" alt="'. get_the_title() .'">';
+	                        echo '<a itemprop="significantLink" rel="bookmark" href="'. get_permalink() .'" title="'. get_the_title() .'" alt="'. get_the_title() .'">';
 	                        the_post_thumbnail( 'small', array( 'alt' => get_the_title(), 'title' => get_the_title() ) );
 	                        echo '</a>';
-	                    } else {
-	                        echo '<a href="'. get_permalink() .'" title="'. get_the_title() .'" alt="'. get_the_title() .'">';
+	                    } elseif ( is_url_exist(get_first_image()) ) {
+                            echo '<a itemprop="significantLink" rel="bookmark" href="'. get_permalink() .'" title="'. get_the_title() .'">';
+	                        echo '<img src="' . get_first_image() . '" title="'. get_the_title() .'" alt="'. get_the_title() .'"/>';
+	                        echo '</a>';
+                        } else {
+	                        echo '<a itemprop="significantLink" rel="bookmark" href="'. get_permalink() .'" title="'. get_the_title() .'" alt="'. get_the_title() .'">';
 	                        echo '<img src="' . get_template_directory_uri() . '/images/262x159.jpg" title="'. get_the_title() .'" alt="'. get_the_title() .'"/>';
 	                        echo '</a>';
 	                    }
 	                ?>
 		                <div class="caption text-center">
-		                    <?php echo '<h3 class="article-title">' . '<a href="' . get_permalink() . '" title="'. get_the_title() .'">' . wp_trim_words( get_the_title(), 5, ' ... ' ) . '</a></h3>';?>
+		                    <?php echo '<h3 class="article-title">' . '<a itemprop="significantLink" rel="bookmark" href="' . get_permalink() . '" title="'. get_the_title() .'">' . wp_trim_words( get_the_title(), 5, ' ... ' ) . '</a></h3>';?>
 		                    <div class="meta">
 		                        <i class="fa fa-calendar"></i> <span class="date"><?php echo date_i18n( 'M d, Y', strtotime( get_the_date('Y-m-d'), false ) ); ?></span>
 		                    </div>

@@ -25,10 +25,12 @@
         Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
     </noscript>
     <![endif]-->
-   <header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
+        
+   <header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 		<div class="padded-container">
 			<div class="container-fluid site-header-main site-pad-rl bg-default">
-			   <div class="site-branding">
+			   <div class="col-lg-3">
+					<div class="site-branding">
 					<?php  
 						$logo = get_theme_mod( 'site_logo', '' );
 						$title_option = get_theme_mod( 'site_title_option', 'text-only' );
@@ -44,18 +46,25 @@
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 							</div>
 							<div class="site-title-text">
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+								<h1 class="site-title" itemprop="headline"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+								<h2 class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></h2>
 							</div>
 						<?php } 
 
 						if ( $title_option == 'text-only' ) { ?>
 							<div class="site-title-text">
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+								<h1 class="site-title" itemprop="headline"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+								<h2 class="site-description" itemprop="description"><?php 
+									if(empty(bloginfo( 'description' ))):
+									echo "&nbsp;";
+									else:
+									bloginfo( 'description' ); 
+									endif;
+								?></h2>
 							</div>
 					<?php } ?>
-				</div><!-- .site-branding -->
+					</div><!-- .site-branding -->
+				</div>
 					<div class="col-md-7 site-adds-wrap">
 						<?php if ( is_active_sidebar( 'horizontal-ad-1' ) ) : ?>
 							<div class="header-ad">
@@ -82,7 +91,7 @@
 	<div class="padded-container">
 		<div class="container-fluid bg-default">
 			<div class="row">
-				<nav id="header-nav" class="navbar navbar-default navbar-static-top">
+				<nav id="header-nav" class="navbar navbar-default navbar-static-top" itemscope itemtype='http://schema.org/SiteNavigationElement'>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tierone_nav">
 							<span class="sr-only"><?php _e('Navigation', 'tierone'); ?></span>
@@ -99,7 +108,7 @@
 						<?php if (has_nav_menu("header-menu")): ?>
 							<?php tierone_display_main_menu(); ?>
 						<?php endif;?>
-						<ul class='menu navbar-right' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
+						<ul class='menu navbar-right'>
 							<li itemprop='name'><a itemprop='url'><i class="fa fa-search" aria-hidden="true"></i></a></li>
 						</ul>
 						<div class="tierone-search-box">
@@ -130,7 +139,9 @@
 						<?php $args = array( 'posts_per_page' => 10); query_posts($args); ?>
 						<?php if(have_posts()) : ?>
 							<?php while( have_posts() ) : the_post(); ?>  
-								<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></li>               
+								<li>
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
+                                </li>               
 							<?php endwhile; ?>
 						 <?php endif; ?>
                          <?php wp_reset_query(); ?>

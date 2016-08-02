@@ -9,12 +9,16 @@
 
 		<?php elseif ( is_search() ) : ?>
 
+			<img src="<?php echo get_template_directory_uri(); ?>/images/404/404 error.png" class="center-block img-responsive">
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'tierone' ); ?></p>
+			
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
-
+			
+			<img src="<?php echo get_template_directory_uri(); ?>/images/404/404 error.png" class="center-block img-responsive">
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'tierone' ); ?></p>
+
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

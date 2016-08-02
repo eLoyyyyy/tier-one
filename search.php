@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-<div class="container site-pad-rl bg-default">
+<div class="padded-container">
+<div class="container-fluid site-pad-rl bg-default">
 	<div id="primary" class="col-lg-9 content-area">
 		<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
@@ -43,4 +44,5 @@
 		<?php get_sidebar(); ?>
 	</div><!-- .bootstrap cols -->
 </div><!-- .row -->
+</div>
 <?php get_footer(); ?>
