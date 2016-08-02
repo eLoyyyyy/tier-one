@@ -22,7 +22,7 @@ class wpb_widget extends WP_Widget {
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
         if ( ! empty( $title ) )
-            echo $args['before_title'] . $title . $args['after_title'];
+            echo '<header>' . $args['before_title'] . $title . $args['after_title'] . '</header>';
         
         $rp = '';
         query_posts( 'posts_per_page=5&order=DESC' );
@@ -32,14 +32,35 @@ class wpb_widget extends WP_Widget {
                     <div class="col-lg-12 random-post">
                         <div class="row clearfix">
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                <a href="<?php the_permalink(); ?>"><?php ( has_post_thumbnail() ) ? the_post_thumbnail() : get_first_image(); ?></a>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                                    <?php 
+                                        $src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ) ); 
+                                        $first_image = '';
+                                        if ( !has_post_thumbnail() ) { $first_image = get_first_image(); }
+
+                                        ?>
+
+                                        <?php if ( has_post_thumbnail() ) { ?>
+                                        <div>
+                                                <?php the_post_thumbnail( 'featured' , array('class'=>'featured-image')); ?>
+                                        </div >
+                                    <?php } elseif ( is_url_exist($first_image) ) { ?>
+                                        <div>
+                                            <img class="featured-image" src="<?php echo get_first_image(); ?>"/>
+                                        </div >
+                                    <?php } else { ?>
+                                        <div>
+                                                <img class="featured-image" src="<?php echo get_template_directory_uri() . '/images/default.jpg'; ?>" itemprop="url"/>
+                                        </div >
+                                    <?php } ?>
+                                </a>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                 <div class="recent-post">
-                                    <span class="text-left">
+                                    <div class="text-left">
                                         <h3 class="h3-mod"><a href="<?php esc_url( the_permalink() );?>"><?php the_title(); ?></a></h3>
                                         <p><small><?php the_time('M j, Y g:i a'); ?></small></p>
-                                    </span>
+                                    </div>
                                     <div class="random-content">
                                         <?php tierone_excerpt(7);?>
                                     </div>

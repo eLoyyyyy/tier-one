@@ -1874,9 +1874,9 @@ div.marquee-title:after {
 
 .catstyle1b-post {
     height: 100%;
-    max-height: 150px;
     position: relative;
     margin-top: 7px;
+    max-height: 210px;
 }
 
 .catstyle1b-post div[class*="-3"] {
@@ -1938,14 +1938,11 @@ div.marquee-title:after {
 
 .catstyle1b-post .caption {
     position: relative;
-    height: 140px;
+    height: 165px;
 }
 
 p.featured-date {
     margin: 0 0 5px;
-}
-.catstyle1b-post{
-  position: relative;
 }
 .catstyle1b-post:after{
   position: absolute;

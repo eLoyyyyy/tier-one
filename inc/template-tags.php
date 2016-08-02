@@ -11,17 +11,42 @@ function get_first_image($src = null) {
     $first_img = $matches[1][0]; 
     if ( empty( $first_img ) ) :
         // defines a fallback imaage
+        if(!file_exists($first_img)) :
         $first_img = get_template_directory_uri() . "/images/default.jpg";
+        endif;
     endif;
 
-    if ($isnot == false) : 
-        _featured_image($first_img);
-    endif; 
+    return $first_img;
+}
+
+/*http://stackoverflow.com/questions/7684771/how-check-if-file-exists-from-the-url#answer-7684862*/
+function is_url_exist($url){
+    $ch = curl_init($url);    
+    curl_setopt($ch, CURLOPT_NOBODY, true);
+    curl_exec($ch);
+    $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if($code == 200){
+       $status = true;
+    }else{
+      $status = false;
+    }
+    curl_close($ch);
+   return $status;
 }
 
 function _featured_image($image_src) {
-    ?><div class="featured-image" style="background: url('<?php echo $image_src; ?>')"></div><?php
+    ?>
+        <!-- <div class="featured-image" style="background: url('<?php echo $image_src; ?>')"></div> -->
+        <img class="featured-image" itemprop="image" src="<?php echo $image_src; ?>">
+    <?php
 }
+
+
+/*function _featured_image($image_src) {
+    ?><div class="featured-image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject"><img src="<?php echo $image_src; ?>" itemprop="url"/> </div><?php
+}*/
+
 
 
 /*Sidebar*/
@@ -99,7 +124,7 @@ if ( ! function_exists('tierone_paging_nav')) :
     ) );
 
     if ($links) :   ?>
-        <nav class="navigation paging-navigation">
+        <nav class="navigation paging-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
            <h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'tierone' ); ?></h1>
            <?php echo $links; ?>
         </nav>
@@ -148,7 +173,7 @@ function tierone_featured_image(){
         <?php } ?>
     <?php else : ?>
         <div class="article-preview-image">
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'featured', array('itemprop' => 'image') ); ?></a>
         </div>
     <?php endif;
 }

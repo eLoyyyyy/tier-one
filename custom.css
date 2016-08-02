@@ -1,0 +1,180 @@
+/* unblocker */
+div#unblocker-div {
+	position: relative;
+}
+div#unblocker-div img {
+	width: 100%;
+    float: right;
+}
+section#unblocker {
+	position: fixed;
+    top: 256px;
+    left: 0;
+    z-index: 10;
+}
+a#unblocker-close{
+	position: absolute;
+    top: 1px;
+    right: 5px;
+    font-size: 18px;
+	opacity: 0;
+}
+@media only screen and (max-width: 767px){
+	div#unblocker-div img {
+		width: 71%;
+	}
+	a#unblocker-close{
+    		right: 2px;
+   		font-size: 13px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+	div#unblocker-div img {
+		width: 89%;
+	}
+	a#unblocker-close{
+    		font-size: 15px;
+	}
+}
+body .modal-dialog {
+    width: 477px;
+	margin-top:10%;
+}
+
+/* QQ Mobile Floating Banner */
+section.mobile-secs {
+    position:fixed;
+    top:74px;
+    left:0;
+    z-index: 1000;
+    left: -231px;
+}
+
+.mobile-div {
+    width: 231px;
+    overflow: hidden;
+    display:inline-block;
+    float:left;
+}
+
+.phn {
+    width: 79px;
+    height: 56px;
+    background: #fff;
+    margin-left: -27px;
+    padding-right: 13px;
+    
+    -webkit-box-shadow: -2px 0px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -2px 0px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: -2px 0px 6px 0px rgba(0,0,0,0.75);
+	
+	text-align: right;
+}
+
+.phn-qq188 i {
+    color: #2E84FF;
+}
+
+.phn-qq288 i {
+    color: #2B9DAF;
+}
+
+.phn-qq101 i {
+    color: #19871B;
+}
+
+.phn-qq188, .phn-qq288, .phn-qq101 {
+    transform-origin: bottom left;
+    -ms-transform: skew(-23deg, 0deg);
+    -webkit-transform: skew(-23deg, 0deg);
+    transform: skew(-23deg, 0deg);
+}
+
+.phn-qq188 i, .phn-qq288 i, .phn-qq101 i {
+    transform-origin: bottom left;
+    -ms-transform: skew(23deg, 0deg);
+    -webkit-transform: skew(23deg, 0deg);
+    transform: skew(23deg, 0deg);
+    
+    margin-top: -3px;
+}
+
+.mob, .mob-logo {
+    width: 194px;
+    height: 56px;
+}
+
+.mob {
+    -webkit-box-shadow: inset 0px -1px 6px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 0px -1px 6px 0px rgba(0,0,0,0.75);
+box-shadow: inset 0px -1px 6px 0px rgba(0,0,0,0.75);
+}
+
+.mob-logo{
+    position:absolute;
+}
+
+.phn, .mob {
+    float:left;
+    position:relative;
+}
+
+.mobl-qq188, .mobl-qq288, .mobl-qq101, .qq-mobile-logo {
+    background: url("/wp-content/uploads/2016/07/logos-enlarge2.png");
+}
+
+.mobl-qq188{
+    background-position: 12px -64px;
+}
+
+.mobl-qq288 {
+    background-position: -154px -66px;
+}
+
+.mobl-qq101 {
+    background-position: -327px -66px;
+}
+
+.mob-qq188 {
+    background-color: #2e84ff; /* Old browsers */
+    background-color: -moz-linear-gradient(top,  #2e84ff 0%, #205db3 100%); /* FF3.6-15 */
+    background-color: -webkit-linear-gradient(top,  #2e84ff 0%,#205db3 100%); /* Chrome10-25,Safari5.1-6 */
+    background-color: linear-gradient(to bottom,  #2e84ff 0%,#205db3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e84ff', endColorstr='#205db3',GradientType=0 ); /* IE6-9 */
+
+}
+
+.mob-qq288 {
+    background-position: 0px -41px;
+    background: #2b9daf; /* Old browsers */
+    background: -moz-linear-gradient(top,  #2b9daf 0%, #1d6b77 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #2b9daf 0%,#1d6b77 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #2b9daf 0%,#1d6b77 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b9daf', endColorstr='#1d6b77',GradientType=0 ); /* IE6-9 */
+}
+
+.mob-qq101 {
+    background-position: 0px -41px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#19871b+0,115d13+100 */
+    background: #19871b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #19871b 0%, #115d13 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #19871b 0%,#115d13 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #19871b 0%,#115d13 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19871b', endColorstr='#115d13',GradientType=0 ); /* IE6-9 */
+}
+
+.fa-4_5x {
+    font-size: 64px !important; /*4.5em*/
+}
+
+.qq-mobile-logo {
+    width: 31px;
+    height: 168px;
+    background-position: -516px -14px;
+    display: inline-block;
+    float: left;
+}
+
+.mobile-secs .row {
+	margin-bottom: 0px;
+}
