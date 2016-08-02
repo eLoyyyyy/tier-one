@@ -28,12 +28,14 @@ class socialmedia_widget extends WP_Widget {
         $rp = '';
        ?>
 
-        <div class="sm sm-facebook"><a href="http://facebook.com/judisportsbookqq288"><i class="fa fa-facebook fa-2x" aria-hidden="false"></i></a></div>
-        <div class="sm sm-twitter"><a href="http://twitter.com/judisportsbookqq288"><i class="fa fa-twitter fa-2x" aria-hidden="false"></i></a></div>
-        <div class="sm sm-pinterest"><a href="http://pinterest.com/judisportsbookqq288"><i class="fa fa-pinterest-p fa-2x" aria-hidden="false"></i></a></div>
+
+        <div class="sm sm-facebook"><a href="http://facebook.com/"><i class="fa fa-facebook fa-2x" aria-hidden="false"></i></a></div>
+        <div class="sm sm-twitter"><a href="http://twitter.com/"><i class="fa fa-twitter fa-2x" aria-hidden="false"></i></a></div>
+        <div class="sm sm-pinterest"><a href="http://pinterest.com/"><i class="fa fa-pinterest-p fa-2x" aria-hidden="false"></i></a></div>
         <div class="sm sm-google-plus"><a href="http://google.com"><i class="fa fa-google-plus fa-2x" aria-hidden="false"></i></a></div>
         <div class="sm sm-youtube"><a href="http://youtube.com"><i class="fa fa-youtube fa-2x" aria-hidden="false"></i></a></div>
-        <div class="sm sm-linkedin"><a href="http://linkedin.com/in/judisportsbookqq288"><i class="fa fa-linkedin fa-2x" aria-hidden="false"></i></a></div>
+        <div class="sm sm-linkedin"><a href="http://linkedin.com/in/"><i class="fa fa-linkedin fa-2x" aria-hidden="false"></i></a></div>
+
         <span class="clearfix"></span>
         <?php
 

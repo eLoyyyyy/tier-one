@@ -1,3 +1,4 @@
+
 <article class="catstyle2-post" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <link itemprop="mainEntityOfPage" href="<?php echo esc_url( get_permalink() );?>" />
 	<header class="entry-meta site-meta-t">
@@ -14,6 +15,7 @@
     ?>
 
         <?php if( has_post_thumbnail() ) : ?>
+<<<<<<< HEAD
             <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
                 <meta itemprop="url" content="<?php the_post_thumbnail_url(); ?>">
 				<meta itemprop="width" content="155">
