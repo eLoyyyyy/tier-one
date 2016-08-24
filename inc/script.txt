@@ -1,0 +1,9 @@
+$('.dp-app a').attr({
+	class:'iframe',
+	'href':'wp-content/themes/tier-one/inc/download-app.php'
+}).fancybox({
+	type: "iframe",
+	width: 1280,
+	minHeight: 768,
+	padding : 0
+});

@@ -1,11 +1,20 @@
 <div class="row">
     <div class="col-lg-12">
-        <article class="featured-post2" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <article class="featured-post2" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting" >
         <link itemprop="mainEntityOfPage" href="<?php echo esc_url( get_permalink() );?>" />	
         <header class="entry-meta site-meta-t">
             <meta itemprop="author" content="<?php the_author();?>">
             <meta itemprop="datePublished" content="<?php the_time('c'); ?> ">
             <meta itemprop="dateModified" content="<?php the_modified_time('c'); ?>">
+            <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <?php $logo = get_theme_mod( 'site_logo', '' ); 
+                if ( !empty($logo) ) : ?>
+                <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <meta itemprop="url" content="<?php echo esc_url( $logo ); ?>">
+                </span>
+                <?php endif; ?>
+                <meta itemprop="name" content="<?php bloginfo( 'name' ); ?>">
+            </span>
         </header>
             <?php 
                 $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) ); 

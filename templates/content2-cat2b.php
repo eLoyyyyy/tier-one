@@ -1,4 +1,4 @@
-<article class="catstyle1b-post clearfix" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="cat2b-post clearfix" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
     <link itemprop="mainEntityOfPage" href="<?php echo esc_url( get_permalink() );?>" />
     <header class="entry-meta site-meta-t">
         <meta itemprop="author" content="<?php the_author();?>">
@@ -15,7 +15,7 @@
         </span>
     </header>
     <div class="row featured-hr ">
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-5">
             <?php 
                 $src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) ); 
                 $first_image = '';
@@ -51,13 +51,13 @@
                 </figure>
             <?php } ?>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-7 col-md-7">
             <div class="caption">
                 <div class="entry-title-div">
                     <?php the_title( sprintf('<h2 class="entry-title" itemprop="headline"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                 </div>
-                <p class="featured-date"><small><?php the_time('M j, Y g:i a'); ?></small></p>
-                <div class="entry-content" itemprop="description"><?php tierone_excerpt(5);?></div>
+                <p class="featured-date"><small><?php the_time('D,  M d Y'); ?></small></p>
+                <div class="entry-content" itemprop="description"><?php tierone_excerpt(25);?></div>
             </div>
         </div>
     </div>

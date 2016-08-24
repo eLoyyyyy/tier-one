@@ -1,0 +1,239 @@
+html {
+}
+
+.row>div{
+    height: 100%;
+}
+/*------------------------------------------------
+Pills
+------------------------------------------------*/
+.nav-pills>li{
+	background: #10b0ca;
+}
+.nav-pills>li>a {
+    color: #fff;
+    border-radius: 0px;
+}
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover{
+    background: rgb(1, 133, 154);
+    text-shadow: 0 0 0.5em #10b0ca;
+}
+.nav-pills>li>a:focus,
+.nav-pills>li>a:hover{
+	background: rgb(1, 133, 154);
+}
+
+.nav>li>a{
+    padding: 15px 15px;
+}
+
+.nav-pills>li>a>span{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 8px;
+    font-weight: 600;
+}
+
+/*------------------------------------------------
+Pills - override
+------------------------------------------------*/
+.nav2 {
+    list-style: none;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.nav-pills2>li{
+	background: #10b0ca;
+    display: table-cell;
+    text-align: center;
+}
+.nav-pills2>li>a {
+    color: #fff;
+    border-radius: 0px;
+    display: block;
+    padding: 22px 0px;
+}
+.nav-pills2>li.active>a,
+.nav-pills2>li.active>a:focus,
+.nav-pills2>li.active>a:hover{
+    background: rgb(1, 133, 154);
+    text-shadow: 0 0 0.5em #10b0ca;
+}
+.nav-pills2>li>a:focus,
+.nav-pills2>li>a:hover{
+	background: rgb(1, 133, 154);
+}
+
+.nav-pills2>li>a>span{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 8px;
+    font-weight: 600;
+}
+
+.fig {
+    width: 130px;
+    height: 117px;
+    float: left;
+    margin: 9px 0px;
+    position:relative;
+    overflow: hidden;
+}
+
+.fig-container {
+    padding: 10px 27px;
+}
+
+.fig-icon {
+    background: url('images/download-app-logo.png');
+    height: 117px;
+}
+
+.fig-icon-playtech {
+    background-position: 0px 9px; 
+}
+
+.fig-icon-ag {
+    background-position: -127px 9px; 
+}
+
+.fig-icon-allbet {
+    background-position: -257px 9px; 
+}
+
+.fig-icon-idnplay {
+    background-position: -386px 9px;
+}
+
+.fig-icon-mg {
+    background-position: -516px 9px;
+}
+
+.fig-icon-gameplay {
+    background-position: -644px 9px;
+}
+
+.fig-icon-gudang {
+    background-position: -773px 9px;
+}
+
+.fig-icon-opus {
+    background-position: -900px 9px;
+}
+
+.fig .fig-view {
+    height: 100%;
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgba(176,176,176,0.3);
+    margin-top:-117px;
+}
+
+.fig .fig-view > a {
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    margin-left: -35px;
+    border: 2px solid rgba(255,255,255,0.7);
+    color: #fff;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    line-height: 66px;
+    font-size: 21px;
+    font-weight: bold;
+    background: rgba(176,176,176,0.5);
+}
+
+.fig .fig-view{
+    transition: margin-top 300ms ease-out 50ms;
+    -webkit-transition: margin-top 300ms ease-out 50ms;
+    -moz-transition: margin-top 300ms ease-out 50ms;
+    -o-transition: margin-top 300ms ease-out 50ms;
+}
+
+.fig:hover .fig-view {
+    margin-top:0px;
+}
+
+.download-app div[class^="col-"] {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.content .content-title {
+    height: 92px;
+    width: 100%;
+}
+
+.content .content-title > div {
+    height: 100%;
+}
+
+.app-download > a > i, .app-download > a > span {
+    line-height: 92px;
+    color: #10b0ca;
+    font-weight: bold;
+}
+
+.app-download > a > i {
+    vertical-align: middle;
+}
+
+.app-download a > span {
+    font-size: 16px;   
+}
+
+.app-download a:hover {
+    text-decoration: none;
+}
+
+.app-title > h2 {
+    margin-top:10px;
+}
+
+.app-title > h4 {
+    color: #10b0ca;
+}
+
+.content {
+    padding: 0 20px;
+}
+
+.fig span.fig-content {
+    display: block;
+    vertical-align: bottom;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align:center;
+    font-size: 18px;
+    color: #10b0ca;
+}
+
+.nav-justified-fix {
+    table-layout: fixed;
+}
+.nav-justified-fix:before { display: none; }
+.nav-justified-fix:after { display: none; }
+
+@media only screen and (min-width : 768px) {
+    .is-table-row {
+        display: table;
+        height:100vh;
+    }
+    .is-table-row > [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+}

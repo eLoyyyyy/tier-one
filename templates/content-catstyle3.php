@@ -1,10 +1,19 @@
-<article class="catstyle3-post" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost" >
+<article class="catstyle3-post" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting" >
     <div class="row">
         <link itemprop="mainEntityOfPage" href="<?php echo esc_url( get_permalink() );?>" />
         <header class="entry-meta site-meta-t">
             <meta itemprop="author" content="<?php the_author();?>">
             <meta itemprop="datePublished" content="<?php the_time('c'); ?> ">
             <meta itemprop="dateModified" content="<?php the_modified_time('c'); ?>">
+            <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <?php $logo = get_theme_mod( 'site_logo', '' ); 
+                if ( !empty($logo) ) : ?>
+                <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                    <meta itemprop="url" content="<?php echo esc_url( $logo ); ?>">
+                </span>
+                <?php endif; ?>
+                <meta itemprop="name" content="<?php bloginfo( 'name' ); ?>">
+            </span>
         </header>
         <div class="col-lg-5">
         <?php 

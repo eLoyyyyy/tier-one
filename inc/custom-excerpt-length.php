@@ -28,10 +28,18 @@ class Excerpt {
    * @return void
    * @author Baylor Rae'
    */
-  public static function length($new_length = 55) {
+  public static function length($new_length = 55, $walang_rm = false) {
     Excerpt::$length = $new_length;
 
     add_filter('excerpt_length', 'Excerpt::new_length');
+      
+    if ( $walang_rm == false ) {
+        add_filter('the_excerpt', function($text) {
+            $excerpt = '' . strip_tags($text) . '<a class="moretag " href="'. get_permalink() . '"> ' . wp_kses_post( get_theme_mod( 'read_more_text', 'Read More <i class="fa fa-angle-double-right"></i>' ) ) . '</a>';
+            return $excerpt;
+        });
+    }
+    
     remove_filter('the_excerpt', 'wpautop');
 
     Excerpt::output();
@@ -60,8 +68,8 @@ function trim_excerpt($text) {
 add_filter('get_the_excerpt', 'trim_excerpt');
 
 // An alias to the class
-function tierone_excerpt($length = 55) {
-  Excerpt::length($length);
+function tierone_excerpt($length = 55, $walang_read_more = false) {
+    Excerpt::length($length, $walang_read_more);
 }
 
 /*Remove Excerpt*/
@@ -70,10 +78,4 @@ function tierone_excerpt_length($more){
 }
 add_filter( 'excerpt_more','tierone_excerpt_length' );
 
-/*Custom Excerpt*/
-function tierone_custom_lenght($text){
-    
-    $excerpt = '' . strip_tags($text) . '<a class="moretag " href="'. get_permalink() . '"> ' . wp_kses_post( get_theme_mod( 'read_more_text', 'Read More <i class="fa fa-angle-double-right"></i>' ) ) . '</a>';
-    return $excerpt;
-}
-add_filter( 'the_excerpt' , 'tierone_custom_lenght');
+

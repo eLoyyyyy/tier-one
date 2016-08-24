@@ -173,7 +173,7 @@ function tierone_featured_image(){
         <?php } ?>
     <?php else : ?>
         <div class="article-preview-image">
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'featured', array('itemprop' => 'image') ); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'featured', array('itemprop' => 'contentUrl') ); ?></a>
         </div>
     <?php endif;
 }
@@ -190,4 +190,31 @@ function tierone_next_prev_link()
             </ul>
         </nav>
     <?php } 
+}
+
+function tierone_tags(){
+    $posttags = get_the_tags();
+    if ($posttags) {
+        foreach($posttags as $tag) {
+            ?><a rel="tags" href="<?php echo get_tag_link($tag->term_id);?>"><span itemprop="keywords"><?php echo $tag->name;?></span></a>, <?php
+        }
+    }
+}
+
+
+/* https://wordpress.org/support/topic/need-previous_posts_link-next_posts_link-has-title-and-rel */
+
+if ( !function_exists('get_next_posts_link_attributes') ){
+	function get_next_posts_link_attributes($attr){
+		$attr = 'rel="myrel" title="mytitle"';
+		return $attr;
+	}
+    add_filter('next_posts_link_attributes', 'get_next_posts_link_attributes');
+}
+if ( !function_exists('get_previous_posts_link_attributes') ){
+	function get_previous_posts_link_attributes($attr){
+		$attr = 'rel="myrel" title="mytitle"';
+		return $attr;
+	}
+    add_filter('previous_posts_link_attributes', 'get_previous_posts_link_attributes');
 }

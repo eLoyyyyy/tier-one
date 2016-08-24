@@ -7,7 +7,7 @@
 		<link rel="canonical" href="<?php bloginfo('url'); ?>">
 		<?php wp_head(); ?>
 	</head>
-    <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage" itemprop="mainContentOfPage">
   <!--[if lt IE 9]>
     <script>
         document.createElement("header" );
@@ -46,21 +46,25 @@
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url( $logo ); ?>" alt="<?php bloginfo( 'name' ); ?>"></a>
 							</div>
 							<div class="site-title-text">
-								<h1 class="site-title" itemprop="headline"><a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<h2 class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></h2>
+                                <hgroup>
+                                    <h1 class="site-title" itemprop="headline"><a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                    <h2 class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></h2>
+                                </hgroup>
 							</div>
 						<?php } 
 
 						if ( $title_option == 'text-only' ) { ?>
 							<div class="site-title-text">
-								<h1 class="site-title" itemprop="headline"><a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-								<h2 class="site-description" itemprop="description"><?php 
-									if(empty(bloginfo( 'description' ))):
-									echo "&nbsp;";
-									else:
-									bloginfo( 'description' ); 
-									endif;
-								?></h2>
+                                <hgroup>
+                                    <h1 class="site-title" itemprop="headline"><a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                                    <h2 class="site-description" itemprop="description"><?php 
+                                        if(empty(bloginfo( 'description' ))):
+                                           echo "&nbsp;";
+                                        else:
+                                           bloginfo( 'description' ); 
+                                        endif;
+                                    ?></h2>
+                                </hgroup>
 							</div>
 					<?php } ?>
 					</div><!-- .site-branding -->
@@ -124,6 +128,11 @@
 			</div>
 		</div>
 	</div>
+    <?php 
+        $isticker = false;
+        
+    if ( $isticker == true ) :
+    ?>
     <aside id="current" class="current_wrap">
 		<div class="padded-container">
 			<div class="container-fluid site-pad-rl bg-default site-pad-tb">
@@ -154,3 +163,4 @@
 			</div>
 		</div>
     </aside>
+    <?php endif; ?>

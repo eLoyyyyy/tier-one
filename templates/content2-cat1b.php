@@ -1,4 +1,4 @@
-<article class="catstyle1a-post" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="cat1b-post" id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
     <link itemprop="mainEntityOfPage" href="<?php echo esc_url( get_permalink() );?>" />
     <header class="entry-meta site-meta-t">
         <meta itemprop="author" content="<?php the_author();?>">
@@ -25,8 +25,8 @@
         <?php if ( has_post_thumbnail() ) { ?>
         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
             <meta itemprop="url" content="<?php the_post_thumbnail_url(); ?>">
-            <meta itemprop="width" content="287">
-            <meta itemprop="height" content="173">
+            <meta itemprop="width" content="189">
+            <meta itemprop="height" content="205">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php the_post_thumbnail( 'featured' , array('itemprop'=>'image', 'class'=>'featured-image')); ?>
             </a>
@@ -34,16 +34,16 @@
     <?php } elseif ( is_url_exist($first_image) ) { ?>
         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
             <meta itemprop="url" content="<?php echo get_first_image(); ?>">
-            <meta itemprop="width" content="287">
-            <meta itemprop="height" content="173">
+            <meta itemprop="width" content="189">
+            <meta itemprop="height" content="205">
             <a href="<?php the_permalink(); ?>">
                 <img class="featured-image" src="<?php echo get_first_image(); ?>" itemprop="image"/>
             </a>
         </figure>
     <?php } else { ?>
         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-            <meta itemprop="width" content="287">
-            <meta itemprop="height" content="173">
+            <meta itemprop="width" content="189">
+            <meta itemprop="height" content="205">
             <a href="<?php the_permalink(); ?>">
                 <img class="featured-image" src="<?php echo get_template_directory_uri() . '/images/default.jpg'; ?>" itemprop="url"/>
             </a>
@@ -53,5 +53,6 @@
         <div class="entry-title-div">
             <?php the_title( sprintf('<h2 class="entry-title" itemprop="headline"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
         </div>
+        <small><?php the_date('D,  M d Y');?> &nbsp;<?php the_author(); ?>, <?php echo get_the_category()[0]->cat_name; ?></small>
     </div>
 </article>

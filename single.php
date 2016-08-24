@@ -3,7 +3,7 @@
 	<div class="container-fluid site-pad-rl bg-default">
 		<div id="primary" class="col-lg-9 content-area">
 			<div class="row">
-				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+				<main id="main" class="site-main" role="main" itemscope itemtype="http://schema.org/Blog">
 					<?php while ( have_posts() ): the_post(); ?>
 					 
 						<?php get_template_part('content','single');?>
