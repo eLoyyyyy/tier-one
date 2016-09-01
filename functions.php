@@ -222,6 +222,11 @@ function tierone_display_main_menu() {
     );
 }
 
+function yst_wpseo_change_og_locale( $locale ) {
+ 	return 'id_ID'; // vi_VN , ms_MY
+}
+add_filter( 'wpseo_locale', 'yst_wpseo_change_og_locale' );
+
 
 /*requires functions*/
 require get_template_directory() . '/inc/custom-excerpt-length.php';
@@ -230,3 +235,5 @@ require get_template_directory() . '/inc/widgets/recent-post-widget.php';
 require get_template_directory() . '/inc/widgets/tags-widget.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/widgets/socialmedia-widget.php';
+require get_template_directory() . '/inc/admin-panel/panel-options.php';
+require get_template_directory() . '/inc/widgets/banner-promo-ads-widget.php';
